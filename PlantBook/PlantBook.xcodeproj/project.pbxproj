@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1529E62DFB75D4137DF1BEF1 /* Pods_PlantBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A31FB9E31EF31C47B6A0D649 /* Pods_PlantBook.framework */; };
 		4296D9C1213D8DEA00EC05A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4296D9C0213D8DEA00EC05A8 /* AppDelegate.swift */; };
 		4296D9C3213D8DEA00EC05A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4296D9C2213D8DEA00EC05A8 /* ViewController.swift */; };
 		4296D9C6213D8DEA00EC05A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4296D9C4213D8DEA00EC05A8 /* Main.storyboard */; };
@@ -29,11 +30,15 @@
 		4296D9CA213D8DEC00EC05A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4296D9CC213D8DEC00EC05A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42A040D92143E27000DDEBB4 /* PlantData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantData.swift; sourceTree = "<group>"; };
+		42A040DC214404EA00DDEBB4 /* PlantBook-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PlantBook-Bridging-Header.h"; sourceTree = "<group>"; };
 		42C783C721418FDE00F76B24 /* PlantMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantMapViewController.swift; sourceTree = "<group>"; };
 		42C783CE214192BE00F76B24 /* PlantSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantSelectViewController.swift; sourceTree = "<group>"; };
 		42C783D22141933100F76B24 /* PlantBookTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantBookTableViewController.swift; sourceTree = "<group>"; };
 		42C783D52141940400F76B24 /* PlantListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantListTableViewController.swift; sourceTree = "<group>"; };
 		42C783D72141943200F76B24 /* PlantDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailTableViewController.swift; sourceTree = "<group>"; };
+		A31FB9E31EF31C47B6A0D649 /* Pods_PlantBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlantBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B699F163D30E4D34BB4E785B /* Pods-PlantBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlantBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlantBook/Pods-PlantBook.debug.xcconfig"; sourceTree = "<group>"; };
+		CD4D873B89BE63C1834DD82D /* Pods-PlantBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlantBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlantBook/Pods-PlantBook.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +46,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1529E62DFB75D4137DF1BEF1 /* Pods_PlantBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1652CA652F42E5ED6B53EFA8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A31FB9E31EF31C47B6A0D649 /* Pods_PlantBook.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4296D9B4213D8DEA00EC05A8 = {
 			isa = PBXGroup;
 			children = (
 				4296D9BF213D8DEA00EC05A8 /* PlantBook */,
 				4296D9BE213D8DEA00EC05A8 /* Products */,
+				82157675B2B3825F2238A117 /* Pods */,
+				1652CA652F42E5ED6B53EFA8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +82,7 @@
 		4296D9BF213D8DEA00EC05A8 /* PlantBook */ = {
 			isa = PBXGroup;
 			children = (
+				42A040DB214404B600DDEBB4 /* Bridging-Header */,
 				4296D9D3213D8E8100EC05A8 /* NetworkManager */,
 				42C783D92141945500F76B24 /* Models */,
 				4296D9D2213D8E5900EC05A8 /* ViewControllers */,
@@ -83,10 +100,10 @@
 			isa = PBXGroup;
 			children = (
 				42C783DA2141945B00F76B24 /* ViewModels */,
-				42C783D42141938500F76B24 /* PlantListViewControllers */,
 				42C783C9214190E100F76B24 /* SearchViewControllers */,
-				42C783CA2141913100F76B24 /* FuzzySearchViewControllers */,
+				42C783D42141938500F76B24 /* PlantListViewControllers */,
 				42C783CB2141917800F76B24 /* PlantBookViewControllers */,
+				42C783CA2141913100F76B24 /* FuzzySearchViewControllers */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -96,6 +113,14 @@
 			children = (
 			);
 			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		42A040DB214404B600DDEBB4 /* Bridging-Header */ = {
+			isa = PBXGroup;
+			children = (
+				42A040DC214404EA00DDEBB4 /* PlantBook-Bridging-Header.h */,
+			);
+			path = "Bridging-Header";
 			sourceTree = "<group>";
 		};
 		42C783C9214190E100F76B24 /* SearchViewControllers */ = {
@@ -146,6 +171,15 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		82157675B2B3825F2238A117 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B699F163D30E4D34BB4E785B /* Pods-PlantBook.debug.xcconfig */,
+				CD4D873B89BE63C1834DD82D /* Pods-PlantBook.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -153,9 +187,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4296D9CF213D8DED00EC05A8 /* Build configuration list for PBXNativeTarget "PlantBook" */;
 			buildPhases = (
+				193FED9239804CCC625C8300 /* [CP] Check Pods Manifest.lock */,
 				4296D9B9213D8DEA00EC05A8 /* Sources */,
 				4296D9BA213D8DEA00EC05A8 /* Frameworks */,
 				4296D9BB213D8DEA00EC05A8 /* Resources */,
+				C15D21945E669202BF51FFFD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -211,6 +247,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		193FED9239804CCC625C8300 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PlantBook-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C15D21945E669202BF51FFFD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PlantBook/Pods-PlantBook-resources.sh",
+				"${PODS_ROOT}/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/Resources/mapapi.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/mapapi.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PlantBook/Pods-PlantBook-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4296D9B9213D8DEA00EC05A8 /* Sources */ = {
@@ -366,6 +441,7 @@
 		};
 		4296D9D0213D8DED00EC05A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B699F163D30E4D34BB4E785B /* Pods-PlantBook.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -377,6 +453,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yukun.swu.plantBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PlantBook/Bridging-Header/PlantBook-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -384,6 +461,7 @@
 		};
 		4296D9D1213D8DED00EC05A8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD4D873B89BE63C1834DD82D /* Pods-PlantBook.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -395,6 +473,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yukun.swu.plantBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PlantBook/Bridging-Header/PlantBook-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
