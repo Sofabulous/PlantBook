@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nxI-90-QUI">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--模糊搜索-->
+        <scene sceneID="19x-xh-IFf">
+            <objects>
+                <viewController id="bOA-CN-5vs" customClass="PlantSelectViewController" customModule="plantBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tNh-e7-meH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="VUD-jK-ywn"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="模糊搜索" image="search" id="7Me-oO-7NI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kn0-vy-q3R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="766" y="-569"/>
+        </scene>
+        <!--校园地图-->
+        <scene sceneID="sAd-Cu-bxA">
+            <objects>
+                <viewController id="wW2-TY-epP" customClass="PlantMapViewController" customModule="plantBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WK4-lD-rjG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="zik-bF-ud6"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="校园地图" image="map" id="TbX-ul-E3r"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fXh-KQ-km9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="766" y="-1260"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="3IK-1e-WYY">
+            <objects>
+                <tabBarController id="nxI-90-QUI" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aEI-I0-w69">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="wW2-TY-epP" kind="relationship" relationship="viewControllers" id="41N-nM-QgX"/>
+                        <segue destination="bOA-CN-5vs" kind="relationship" relationship="viewControllers" id="QwN-gR-E8c"/>
+                        <segue destination="Iy5-gV-Uuy" kind="relationship" relationship="viewControllers" id="IPA-Gb-MLW"/>
+                        <segue destination="d50-rs-deT" kind="relationship" relationship="viewControllers" id="L5K-3h-BAs"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="czn-sX-Hfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-231" y="-253"/>
+        </scene>
+        <!--收藏夹-->
+        <scene sceneID="FHO-Gf-hQI">
+            <objects>
+                <tableViewController id="d50-rs-deT" customClass="PlantListTableViewController" customModule="plantBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="R7Q-yH-kbZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <connections>
+                            <outlet property="dataSource" destination="d50-rs-deT" id="zcW-wK-R4P"/>
+                            <outlet property="delegate" destination="d50-rs-deT" id="uLf-Am-LEn"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="收藏夹" image="favorites" id="wpv-kk-K57"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CWS-Sm-xaJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="766" y="842"/>
+        </scene>
+        <!--植物图志-->
+        <scene sceneID="4P1-2H-a2g">
+            <objects>
+                <tableViewController id="Iy5-gV-Uuy" customClass="PlantBookTableViewController" customModule="plantBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="T5L-xH-2E4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <connections>
+                            <outlet property="dataSource" destination="Iy5-gV-Uuy" id="d1o-XO-8Ew"/>
+                            <outlet property="delegate" destination="Iy5-gV-Uuy" id="9eT-Hz-sVD"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="植物图志" image="plant" id="k0D-pt-gjI"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SPs-DW-edR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="766" y="127"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="favorites" width="28" height="32"/>
+        <image name="map" width="30" height="30"/>
+        <image name="plant" width="36" height="36"/>
+        <image name="search" width="32" height="32"/>
+    </resources>
+</document>
