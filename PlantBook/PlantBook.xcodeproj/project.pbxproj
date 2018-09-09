@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1529E62DFB75D4137DF1BEF1 /* Pods_PlantBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A31FB9E31EF31C47B6A0D649 /* Pods_PlantBook.framework */; };
+		4257870C214546C30006E90B /* AnimatedAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4257870B214546C30006E90B /* AnimatedAnnotationView.swift */; };
 		4296D9C1213D8DEA00EC05A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4296D9C0213D8DEA00EC05A8 /* AppDelegate.swift */; };
 		4296D9C3213D8DEA00EC05A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4296D9C2213D8DEA00EC05A8 /* ViewController.swift */; };
 		4296D9C6213D8DEA00EC05A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4296D9C4213D8DEA00EC05A8 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4257870B214546C30006E90B /* AnimatedAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedAnnotationView.swift; sourceTree = "<group>"; };
 		4296D9BD213D8DEA00EC05A8 /* PlantBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4296D9C0213D8DEA00EC05A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4296D9C2213D8DEA00EC05A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,14 @@
 				A31FB9E31EF31C47B6A0D649 /* Pods_PlantBook.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4257870A214546930006E90B /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				4257870B214546C30006E90B /* AnimatedAnnotationView.swift */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 		4296D9B4213D8DEA00EC05A8 = {
@@ -126,6 +136,7 @@
 		42C783C9214190E100F76B24 /* SearchViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4257870A214546930006E90B /* Custom */,
 				42C783C721418FDE00F76B24 /* PlantMapViewController.swift */,
 			);
 			path = SearchViewControllers;
@@ -293,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4296D9C3213D8DEA00EC05A8 /* ViewController.swift in Sources */,
+				4257870C214546C30006E90B /* AnimatedAnnotationView.swift in Sources */,
 				42C783D32141933100F76B24 /* PlantBookTableViewController.swift in Sources */,
 				42C783D82141943200F76B24 /* PlantDetailTableViewController.swift in Sources */,
 				42A040DA2143E27000DDEBB4 /* PlantData.swift in Sources */,
