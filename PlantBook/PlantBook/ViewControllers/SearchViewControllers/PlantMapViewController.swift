@@ -17,9 +17,9 @@ class PlantMapViewController: UIViewController,BMKMapViewDelegate {
         super.viewDidLoad()
         _mapView = BMKMapView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         self.view.addSubview(_mapView!)
-        //TODO: 设置定位功能
-        _mapView?.showsUserLocation = true
-        _mapView?.userTrackingMode = BMKUserTrackingModeNone
+        //TODO: 设置定位功能，由于目前百度不支持libc++，暂时不接入定位服务
+//        _mapView?.showsUserLocation = true
+//        _mapView?.userTrackingMode = BMKUserTrackingModeNone
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
