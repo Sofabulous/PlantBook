@@ -23,7 +23,7 @@ class AnimatedAnnotationView: BMKAnnotationView {
         self.backgroundColor = UIColor.clear
         
         annotationImageView = UIImageView(frame: bounds)
-        annotationImageView.contentMode = UIView.ContentMode.center
+        annotationImageView.contentMode = .center
         
         self.addSubview(annotationImageView)
     }

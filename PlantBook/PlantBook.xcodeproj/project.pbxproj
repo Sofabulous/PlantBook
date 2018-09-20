@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1529E62DFB75D4137DF1BEF1 /* Pods_PlantBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A31FB9E31EF31C47B6A0D649 /* Pods_PlantBook.framework */; };
 		421D959621455DE00058CC1B /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 421D959521455DE00058CC1B /* Detail.storyboard */; };
+		424C9D2E214E242F00ECBDA7 /* PlantStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424C9D2D214E242F00ECBDA7 /* PlantStore.swift */; };
+		424C9D30214E279200ECBDA7 /* AllPlants in Resources */ = {isa = PBXBuildFile; fileRef = 424C9D2F214E279200ECBDA7 /* AllPlants */; };
 		4257870C214546C30006E90B /* AnimatedAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4257870B214546C30006E90B /* AnimatedAnnotationView.swift */; };
 		4296D9C1213D8DEA00EC05A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4296D9C0213D8DEA00EC05A8 /* AppDelegate.swift */; };
 		4296D9C3213D8DEA00EC05A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4296D9C2213D8DEA00EC05A8 /* ViewController.swift */; };
@@ -25,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		421D959521455DE00058CC1B /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
+		424C9D2D214E242F00ECBDA7 /* PlantStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantStore.swift; sourceTree = "<group>"; };
+		424C9D2F214E279200ECBDA7 /* AllPlants */ = {isa = PBXFileReference; lastKnownFileType = text; path = AllPlants; sourceTree = "<group>"; };
 		4257870B214546C30006E90B /* AnimatedAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedAnnotationView.swift; sourceTree = "<group>"; };
 		4296D9BD213D8DEA00EC05A8 /* PlantBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4296D9C0213D8DEA00EC05A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -182,6 +186,8 @@
 			isa = PBXGroup;
 			children = (
 				42A040D92143E27000DDEBB4 /* PlantData.swift */,
+				424C9D2D214E242F00ECBDA7 /* PlantStore.swift */,
+				424C9D2F214E279200ECBDA7 /* AllPlants */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -262,6 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				424C9D30214E279200ECBDA7 /* AllPlants in Resources */,
 				4296D9CB213D8DEC00EC05A8 /* LaunchScreen.storyboard in Resources */,
 				4296D9C8213D8DEC00EC05A8 /* Assets.xcassets in Resources */,
 				4296D9C6213D8DEA00EC05A8 /* Main.storyboard in Resources */,
@@ -320,6 +327,7 @@
 				42C783D32141933100F76B24 /* PlantBookTableViewController.swift in Sources */,
 				42C783D82141943200F76B24 /* PlantDetailTableViewController.swift in Sources */,
 				42A040DA2143E27000DDEBB4 /* PlantData.swift in Sources */,
+				424C9D2E214E242F00ECBDA7 /* PlantStore.swift in Sources */,
 				42C783C821418FDE00F76B24 /* PlantMapViewController.swift in Sources */,
 				42C783D62141940400F76B24 /* PlantListTableViewController.swift in Sources */,
 				42C783CF214192BE00F76B24 /* PlantSelectViewController.swift in Sources */,

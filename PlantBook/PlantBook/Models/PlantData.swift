@@ -9,6 +9,9 @@
 import Foundation
 
 struct PlantData {
+    typealias PlantId = UUID
+    
+    let id: UUID
     let name_CHS: String
     let name_EN: String
     let description: PlantDescription
