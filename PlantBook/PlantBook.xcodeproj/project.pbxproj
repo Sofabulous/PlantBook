@@ -23,6 +23,8 @@
 		42C783D32141933100F76B24 /* PlantBookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C783D22141933100F76B24 /* PlantBookTableViewController.swift */; };
 		42C783D62141940400F76B24 /* PlantListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C783D52141940400F76B24 /* PlantListTableViewController.swift */; };
 		42C783D82141943200F76B24 /* PlantDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C783D72141943200F76B24 /* PlantDetailTableViewController.swift */; };
+		42E2A15121539F42009FCC27 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E2A15021539F42009FCC27 /* String.swift */; };
+		42E2A1532154E17E009FCC27 /* RootPlantBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E2A1522154E17E009FCC27 /* RootPlantBookViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		42C783D22141933100F76B24 /* PlantBookTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantBookTableViewController.swift; sourceTree = "<group>"; };
 		42C783D52141940400F76B24 /* PlantListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantListTableViewController.swift; sourceTree = "<group>"; };
 		42C783D72141943200F76B24 /* PlantDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailTableViewController.swift; sourceTree = "<group>"; };
+		42E2A15021539F42009FCC27 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		42E2A1522154E17E009FCC27 /* RootPlantBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPlantBookViewController.swift; sourceTree = "<group>"; };
 		A31FB9E31EF31C47B6A0D649 /* Pods_PlantBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlantBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B699F163D30E4D34BB4E785B /* Pods-PlantBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlantBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlantBook/Pods-PlantBook.debug.xcconfig"; sourceTree = "<group>"; };
 		CD4D873B89BE63C1834DD82D /* Pods-PlantBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlantBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlantBook/Pods-PlantBook.release.xcconfig"; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 		4296D9BF213D8DEA00EC05A8 /* PlantBook */ = {
 			isa = PBXGroup;
 			children = (
+				42E2A14F21539E92009FCC27 /* Extensions */,
 				421FEFA621455C060078A8AA /* Storyboards */,
 				42A040DB214404B600DDEBB4 /* Bridging-Header */,
 				4296D9D3213D8E8100EC05A8 /* NetworkManager */,
@@ -169,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				42C783D22141933100F76B24 /* PlantBookTableViewController.swift */,
+				42E2A1522154E17E009FCC27 /* RootPlantBookViewController.swift */,
 			);
 			path = PlantBookViewControllers;
 			sourceTree = "<group>";
@@ -197,6 +203,14 @@
 			children = (
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		42E2A14F21539E92009FCC27 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				42E2A15021539F42009FCC27 /* String.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		82157675B2B3825F2238A117 /* Pods */ = {
@@ -323,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4296D9C3213D8DEA00EC05A8 /* ViewController.swift in Sources */,
+				42E2A15121539F42009FCC27 /* String.swift in Sources */,
 				4257870C214546C30006E90B /* AnimatedAnnotationView.swift in Sources */,
 				42C783D32141933100F76B24 /* PlantBookTableViewController.swift in Sources */,
 				42C783D82141943200F76B24 /* PlantDetailTableViewController.swift in Sources */,
@@ -332,6 +347,7 @@
 				42C783D62141940400F76B24 /* PlantListTableViewController.swift in Sources */,
 				42C783CF214192BE00F76B24 /* PlantSelectViewController.swift in Sources */,
 				4296D9C1213D8DEA00EC05A8 /* AppDelegate.swift in Sources */,
+				42E2A1532154E17E009FCC27 /* RootPlantBookViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +492,7 @@
 			baseConfigurationReference = B699F163D30E4D34BB4E785B /* Pods-PlantBook.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HLHREAEH5Q;
 				INFOPLIST_FILE = plantBook/Info.plist;
@@ -485,6 +502,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yukun.swu.plantBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PlantBook/Bridging-Header/PlantBook-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -496,6 +514,7 @@
 			baseConfigurationReference = CD4D873B89BE63C1834DD82D /* Pods-PlantBook.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HLHREAEH5Q;
 				INFOPLIST_FILE = plantBook/Info.plist;
@@ -505,6 +524,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yukun.swu.plantBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PlantBook/Bridging-Header/PlantBook-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

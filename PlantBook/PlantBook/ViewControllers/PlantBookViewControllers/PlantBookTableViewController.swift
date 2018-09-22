@@ -8,83 +8,106 @@
 
 import UIKit
 
-class PlantBookTableViewController: UITableViewController {
-
+class PlantBookTableViewController: UITableViewController,UISearchBarDelegate {
+    var searchBar: UISearchBar?
+    var searchBarView: UIView?
+    var resultArray:Array<PlantStore.plantName> = []
+    var characterDic:[String:Int] {
+        get {
+            var characterDic:[String:Int] = [:]
+            for plant in resultArray {
+                if let letter = plant.latinPlantName.first {
+                    let firstLetter = String(letter)
+                    if let num = characterDic[firstLetter] {
+                        characterDic[firstLetter] = num + 1
+                    }else {
+                        characterDic[firstLetter] = 1
+                    }
+                }else {
+                    if let num = characterDic["#"] {
+                        characterDic["#"] = num + 1
+                    }else {
+                        characterDic["#"] = 1
+                    }
+                }
+            }
+            return characterDic
+        }
+    }
+    
+    
+    // MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.tableView.tableFooterView = UIView()
+        self.tableView.estimatedSectionHeaderHeight = 0
+        self.searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 44))
+        self.searchBar?.delegate = self
+        resultArray = PlantStore.plantNames
+        self.searchBar?.searchBarStyle = .minimal
+        self.searchBarView?.addSubview(self.searchBar!)
     }
-
-    // MARK: - Table view data source
-
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        let text = searchText.transformTextToLatin()
+        if text.isEmpty {
+            resultArray = PlantStore.plantNames
+        } else {
+            resultArray = PlantStore.plantNames.filter{$0.latinPlantName.contains(text.lowercased())
+            }
+        }
+        self.tableView.reloadData()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let sortedCharacter = characterDic.keys.sorted()
+        return sortedCharacter[section]
+    }
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return self.characterDic.keys.sorted()
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return characterDic.count
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        let sortedCharacter = characterDic.keys.sorted()
+        let key = sortedCharacter[section]
+        return characterDic[key] ?? 0
     }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "detail", for: indexPath)
+        let sortedCharacter = characterDic.keys.sorted()
+        var sum = 0
+        for i in 0..<indexPath.section {
+            let key = sortedCharacter[i]
+            sum += characterDic[key] ?? 0
+        }
+        cell.textLabel?.text = resultArray[sum + indexPath.row].CHSPlantName
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = self.tableView(tableView, cellForRowAt: indexPath)
+        let detailViewController = UIViewController()
+        detailViewController.title = cell.textLabel?.text
+        detailViewController.view.backgroundColor = UIColor.white
+        self.navigationController?.pushViewController(detailViewController, animated: true)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    // MARK: - UIScrollViewDelegate
+    
+    override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.searchBar?.resignFirstResponder()
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
