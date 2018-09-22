@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.15" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="x3z-f3-0iG">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.9"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--植物名称-->
+        <!--名称-->
         <scene sceneID="1pO-Fk-dJt">
             <objects>
                 <viewController id="x3z-f3-0iG" sceneMemberID="viewController">
@@ -19,8 +19,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="kgu-6V-KM0"/>
                     </view>
-                    <navigationItem key="navigationItem" title="植物名称" id="0fx-cg-Ohh">
-                        <barButtonItem key="rightBarButtonItem" image="solid-heart" style="done" id="40U-Na-vw1">
+                    <navigationItem key="navigationItem" title="名称" id="0fx-cg-Ohh">
+                        <barButtonItem key="rightBarButtonItem" image="hollow-heart" style="done" id="40U-Na-vw1">
                             <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
@@ -29,10 +29,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MD5-PG-Tjy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="610" y="69"/>
+            <point key="canvasLocation" x="772" y="63"/>
         </scene>
     </scenes>
     <resources>
-        <image name="solid-heart" width="108" height="100"/>
+        <image name="hollow-heart" width="68" height="63"/>
     </resources>
 </document>

@@ -7,12 +7,18 @@
 //
 
 import UIKit
-
+import Kingfisher
 class PlantListTableViewController: UITableViewController {
-
+    var sourceData:[PlantData]? {
+        willSet {
+            if let _ = newValue {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    let placeImage = UIImage(named: "noPicture")
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -20,27 +26,31 @@ class PlantListTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return sourceData?.count ?? 0
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "plant", for: indexPath) as! PlantTableViewCell
+        if let plantData = sourceData?[indexPath.row] {
+            cell.plantImageView?.kf.setImage(with: plantData.url, placeholder: placeImage, options: nil, progressBlock: nil, completionHandler: nil)
+            cell.plantNameLabel.text = plantData.name
+        }
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.

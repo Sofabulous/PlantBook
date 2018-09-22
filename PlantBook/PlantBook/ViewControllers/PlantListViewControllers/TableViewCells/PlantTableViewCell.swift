@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 class PlantTableViewCell: UITableViewCell {
     
     @IBOutlet weak var plantImageView: UIImageView!
@@ -18,10 +18,10 @@ class PlantTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
 

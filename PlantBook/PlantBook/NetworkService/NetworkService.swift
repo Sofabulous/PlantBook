@@ -8,6 +8,7 @@
 
 import Foundation
 class  NetworkService {
+    
     static public func getPlantDataWith(type:PlantType, handler: @escaping BmobObjectArrayResultBlock) {
         let query = BmobQuery(className: "Plant")
         query?.whereKey(NetworkServiceKey.PlantData.type, equalTo: type.rawValue)
@@ -26,6 +27,24 @@ class  NetworkService {
                 handler(nil,error)
             }
         }
+    }
+    
+    static public func searchPlantDataWith(name: String, handler: @escaping (PlantData?) -> Void) {
+        let query = BmobQuery(className: "Plant")
+        query?.whereKey(NetworkServiceKey.PlantData.name, equalTo: name)
+        query?.findObjectsInBackground{ (array, error) in
+            if let array = array {
+                if let object = array.first {
+                    if let object = object as? BmobObject{
+                        if let plantData = transformToPlantData(object: object) {
+                            handler(plantData)
+                        }
+                    }
+                }
+            }
+            handler(nil)
+        }
+        
     }
     
     static private func transformToPlantData(object:BmobObject) -> PlantData? {

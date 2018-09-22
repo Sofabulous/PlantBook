@@ -8,4 +8,5 @@ target 'PlantBook' do
   # Pods for PlantBook
   pod “BaiduMapKit” #百度地图SDK
   pod 'BmobSDK' #Bmob数据库SDK
+  pod 'Kingfisher', '~> 4.0' #引入Kingfisher做图片管理库
 end

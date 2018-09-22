@@ -142,13 +142,13 @@
         <!--Plant List Table View Controller-->
         <scene sceneID="FHO-Gf-hQI">
             <objects>
-                <tableViewController storyboardIdentifier="PlantListTableViewController" id="d50-rs-deT" customClass="PlantListTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="PlantListTableViewController" id="d50-rs-deT" customClass="PlantListTableViewController" customModule="PlantBook" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="R7Q-yH-kbZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="plant" rowHeight="60" id="Zyt-ga-50W" customClass="PlantTableViewCell" customModule="PlantBook" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="plant" rowHeight="60" id="Zyt-ga-50W" customClass="PlantTableViewCell" customModule="PlantBook" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zyt-ga-50W" id="FJh-pa-Ocx">
@@ -156,14 +156,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FdS-E3-vkd">
-                                            <rect key="frame" x="8" y="8" width="44" height="44"/>
+                                            <rect key="frame" x="8" y="-0.33333333333333215" width="60" height="60.333333333333329"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="44" id="QT6-3W-HJr"/>
-                                                <constraint firstAttribute="width" constant="44" id="YVe-Br-Xec"/>
+                                                <constraint firstAttribute="width" secondItem="FdS-E3-vkd" secondAttribute="height" multiplier="1:1" id="MKp-8f-KEf"/>
+                                                <constraint firstAttribute="width" constant="60" id="YVe-Br-Xec"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OjW-0x-7gR">
-                                            <rect key="frame" x="60" y="15.333333333333336" width="326" height="29"/>
+                                            <rect key="frame" x="76" y="15.333333333333336" width="310" height="29"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -172,7 +172,7 @@
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="OjW-0x-7gR" secondAttribute="trailing" constant="8" id="LA6-pn-7sD"/>
                                         <constraint firstItem="FdS-E3-vkd" firstAttribute="leading" secondItem="FJh-pa-Ocx" secondAttribute="leading" constant="8" id="TMa-K2-JeD"/>
-                                        <constraint firstItem="OjW-0x-7gR" firstAttribute="centerY" secondItem="FJh-pa-Ocx" secondAttribute="centerY" id="Z4e-m3-8cr"/>
+                                        <constraint firstItem="OjW-0x-7gR" firstAttribute="centerY" secondItem="FdS-E3-vkd" secondAttribute="centerY" id="a5t-Gn-AuR"/>
                                         <constraint firstItem="FdS-E3-vkd" firstAttribute="centerY" secondItem="FJh-pa-Ocx" secondAttribute="centerY" id="c6l-cD-bnd"/>
                                         <constraint firstItem="OjW-0x-7gR" firstAttribute="leading" secondItem="FdS-E3-vkd" secondAttribute="trailing" constant="8" id="cGg-hH-VRY"/>
                                     </constraints>
