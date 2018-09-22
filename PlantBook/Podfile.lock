@@ -1,16 +1,20 @@
 PODS:
   - BaiduMapKit (4.1.1)
+  - BmobSDK (2.3.1)
 
 DEPENDENCIES:
   - BaiduMapKit
+  - BmobSDK
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - BaiduMapKit
+    - BmobSDK
 
 SPEC CHECKSUMS:
   BaiduMapKit: 51bba432a28316680676b4d453a70e5031f3a7eb
+  BmobSDK: e0f9e4b451233a80af63a8ae4f2d239474bf567b
 
-PODFILE CHECKSUM: 53fa60c9b76b05b743b07885c64df5818f3e7a32
+PODFILE CHECKSUM: 1bd71b23462d962d8a6e1c3a5e6899da1a1fbcc5
 
 COCOAPODS: 1.5.0

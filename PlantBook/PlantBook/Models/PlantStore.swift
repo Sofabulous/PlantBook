@@ -30,4 +30,7 @@ class PlantStore {
         let CHSPlantName:String
         let latinPlantName:String
     }
+    
+    // 查询数据库，实现模糊搜索
+    
 }

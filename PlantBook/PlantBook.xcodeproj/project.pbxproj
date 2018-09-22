@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1529E62DFB75D4137DF1BEF1 /* Pods_PlantBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A31FB9E31EF31C47B6A0D649 /* Pods_PlantBook.framework */; };
 		421D959621455DE00058CC1B /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 421D959521455DE00058CC1B /* Detail.storyboard */; };
+		4220A4B82155F54E0019F84B /* PlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4220A4B72155F54E0019F84B /* PlantTableViewCell.swift */; };
+		4220A4BA2155F64B0019F84B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4220A4B92155F64B0019F84B /* NetworkService.swift */; };
+		4220A4BF2156359E0019F84B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4220A4BE2156359E0019F84B /* MBProgressHUD.m */; };
 		424C9D2E214E242F00ECBDA7 /* PlantStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424C9D2D214E242F00ECBDA7 /* PlantStore.swift */; };
 		424C9D30214E279200ECBDA7 /* AllPlants in Resources */ = {isa = PBXBuildFile; fileRef = 424C9D2F214E279200ECBDA7 /* AllPlants */; };
 		4257870C214546C30006E90B /* AnimatedAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4257870B214546C30006E90B /* AnimatedAnnotationView.swift */; };
@@ -29,6 +32,10 @@
 
 /* Begin PBXFileReference section */
 		421D959521455DE00058CC1B /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
+		4220A4B72155F54E0019F84B /* PlantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantTableViewCell.swift; sourceTree = "<group>"; };
+		4220A4B92155F64B0019F84B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		4220A4BD2156359E0019F84B /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		4220A4BE2156359E0019F84B /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		424C9D2D214E242F00ECBDA7 /* PlantStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantStore.swift; sourceTree = "<group>"; };
 		424C9D2F214E279200ECBDA7 /* AllPlants */ = {isa = PBXFileReference; lastKnownFileType = text; path = AllPlants; sourceTree = "<group>"; };
 		4257870B214546C30006E90B /* AnimatedAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedAnnotationView.swift; sourceTree = "<group>"; };
@@ -83,6 +90,31 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		4220A4B62155F5210019F84B /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				4220A4B72155F54E0019F84B /* PlantTableViewCell.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		4220A4BB2156353A0019F84B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4220A4BC215635760019F84B /* MBProgressHUD */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		4220A4BC215635760019F84B /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				4220A4BD2156359E0019F84B /* MBProgressHUD.h */,
+				4220A4BE2156359E0019F84B /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 		4257870A214546930006E90B /* Custom */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,10 +144,11 @@
 		4296D9BF213D8DEA00EC05A8 /* PlantBook */ = {
 			isa = PBXGroup;
 			children = (
+				4220A4BB2156353A0019F84B /* Utils */,
 				42E2A14F21539E92009FCC27 /* Extensions */,
 				421FEFA621455C060078A8AA /* Storyboards */,
 				42A040DB214404B600DDEBB4 /* Bridging-Header */,
-				4296D9D3213D8E8100EC05A8 /* NetworkManager */,
+				4296D9D3213D8E8100EC05A8 /* NetworkService */,
 				42C783D92141945500F76B24 /* Models */,
 				4296D9D2213D8E5900EC05A8 /* ViewControllers */,
 				4296D9C0213D8DEA00EC05A8 /* AppDelegate.swift */,
@@ -138,11 +171,12 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		4296D9D3213D8E8100EC05A8 /* NetworkManager */ = {
+		4296D9D3213D8E8100EC05A8 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
+				4220A4B92155F64B0019F84B /* NetworkService.swift */,
 			);
-			path = NetworkManager;
+			path = NetworkService;
 			sourceTree = "<group>";
 		};
 		42A040DB214404B600DDEBB4 /* Bridging-Header */ = {
@@ -182,6 +216,7 @@
 		42C783D42141938500F76B24 /* PlantListViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4220A4B62155F5210019F84B /* TableViewCells */,
 				42C783D52141940400F76B24 /* PlantListTableViewController.swift */,
 				42C783D72141943200F76B24 /* PlantDetailTableViewController.swift */,
 			);
@@ -342,6 +377,9 @@
 				42C783D32141933100F76B24 /* PlantBookTableViewController.swift in Sources */,
 				42C783D82141943200F76B24 /* PlantDetailTableViewController.swift in Sources */,
 				42A040DA2143E27000DDEBB4 /* PlantData.swift in Sources */,
+				4220A4BA2155F64B0019F84B /* NetworkService.swift in Sources */,
+				4220A4BF2156359E0019F84B /* MBProgressHUD.m in Sources */,
+				4220A4B82155F54E0019F84B /* PlantTableViewCell.swift in Sources */,
 				424C9D2E214E242F00ECBDA7 /* PlantStore.swift in Sources */,
 				42C783C821418FDE00F76B24 /* PlantMapViewController.swift in Sources */,
 				42C783D62141940400F76B24 /* PlantListTableViewController.swift in Sources */,

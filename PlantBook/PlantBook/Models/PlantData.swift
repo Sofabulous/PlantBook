@@ -11,7 +11,7 @@ import Foundation
 struct PlantData {
     
     /// 植物图片的URL
-    let url: URL
+    let url: URL?
     /// 植物学名（中文）
     let name: String
     /// 植物学名（拉丁）

@@ -9,14 +9,48 @@
 import UIKit
 
 class PlantSelectViewController: UIViewController {
-
+    var plantType: PlantType? {
+        willSet {
+            if let type = newValue {
+                MBProgressHUD.showAdded(to: self.view, animated: true)
+                NetworkService.getPlantDataWith(type: type) { [weak self] (plantDatas, error) in
+                    if let view = self?.view {
+                        MBProgressHUD.hide(for: view, animated: true)
+                    }
+                    if let _ = error {
+                        self?.show(text: "植物被火星人带走了！")
+                    }else {
+//                        plantDatas
+                    }
+                }
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func clickGymnospermsButton(_ sender: Any) {
+        plantType = .gymnosperms
+    }
+    
+    @IBAction func clickAngiospermsButton(_ sender: Any) {
+        plantType = .angiosperms
+    }
+    
+    @IBAction func clickFernsButton(_ sender: Any) {
+        plantType = PlantType.fern
+    }
+    
+    func show(text:String){
+        //初始化对话框，置于当前的View当中
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hud.label.text = text
+        hud.hide(animated: true, afterDelay: 1.5)
+    }
+    
     /*
     // MARK: - Navigation
 

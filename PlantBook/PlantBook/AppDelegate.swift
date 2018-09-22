@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate {
         if ret == false {
             NSLog("manager start failed!")
         }
+        Bmob.register(withAppKey: "21979335425f89642f5a825c59876223")
         return true
     }
 

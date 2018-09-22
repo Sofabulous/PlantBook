@@ -30,6 +30,9 @@
                                                     <constraint firstAttribute="height" constant="120" id="WEM-4Q-XUP"/>
                                                 </constraints>
                                                 <state key="normal" image="gymnosperms"/>
+                                                <connections>
+                                                    <action selector="clickGymnospermsButton:" destination="bOA-CN-5vs" eventType="touchUpInside" id="fHF-pd-Odl"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="裸子植物" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWb-Cx-sGn">
                                                 <rect key="frame" x="0.0" y="146" width="120" height="20.333333333333343"/>
@@ -49,6 +52,9 @@
                                                     <constraint firstAttribute="width" constant="120" id="bR4-id-GCx"/>
                                                 </constraints>
                                                 <state key="normal" image="angiosperms"/>
+                                                <connections>
+                                                    <action selector="clickAngiospermsButton:" destination="bOA-CN-5vs" eventType="touchUpInside" id="j5r-YH-X3N"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="被子植物" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGv-Vv-JvR">
                                                 <rect key="frame" x="0.0" y="146" width="120" height="20.333333333333343"/>
@@ -67,7 +73,10 @@
                                                     <constraint firstAttribute="width" constant="120" id="cSs-Dd-GoM"/>
                                                     <constraint firstAttribute="height" constant="120" id="xoe-FE-fyC"/>
                                                 </constraints>
-                                                <state key="normal" image="fern"/>
+                                                <state key="normal" image="ferns"/>
+                                                <connections>
+                                                    <action selector="clickFernsButton:" destination="bOA-CN-5vs" eventType="touchUpInside" id="rcG-Az-5ta"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="蕨类植物" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Yh-yT-Ijj">
                                                 <rect key="frame" x="0.0" y="146.00000000000006" width="120" height="20.333333333333343"/>
@@ -133,7 +142,7 @@
         <!--Plant List Table View Controller-->
         <scene sceneID="FHO-Gf-hQI">
             <objects>
-                <tableViewController id="d50-rs-deT" customClass="PlantListTableViewController" customModule="PlantBook" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="PlantListTableViewController" id="d50-rs-deT" customClass="PlantListTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="R7Q-yH-kbZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -377,7 +386,7 @@
     <resources>
         <image name="angiosperms" width="108" height="120"/>
         <image name="favorites" width="28" height="32"/>
-        <image name="fern" width="112" height="120"/>
+        <image name="ferns" width="112" height="120"/>
         <image name="gymnosperms" width="112" height="120"/>
         <image name="map" width="30" height="30"/>
         <image name="plant" width="36" height="36"/>
