@@ -48,8 +48,13 @@ class PlantSelectViewController: UIViewController {
         plantType = .angiosperms
     }
     
+    
     @IBAction func clickFernsButton(_ sender: Any) {
         plantType = PlantType.fern
+    }
+    
+    @IBAction func clickBambooButton(_ sender: Any) {
+        plantType = PlantType.bamboo
     }
     
     func show(text:String){

@@ -84,6 +84,7 @@ struct NetworkServiceKey {
 enum PlantType:String {
     case angiosperms = "angiosperms"
     case gymnosperms = "gymnosperms"
+    case bamboo = "bamboo"
     case fern = "fern"
     
     func getCHSName() -> String{
@@ -92,6 +93,8 @@ enum PlantType:String {
             return "被子植物"
         case .gymnosperms:
             return "裸子植物"
+        case .bamboo:
+            return "竹子"
         case .fern:
             return "蕨类植物"
         }
