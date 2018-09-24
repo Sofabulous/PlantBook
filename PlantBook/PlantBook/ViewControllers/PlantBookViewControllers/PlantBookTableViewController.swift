@@ -98,10 +98,35 @@ class PlantBookTableViewController: UITableViewController,UISearchBarDelegate {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = self.tableView(tableView, cellForRowAt: indexPath)
-        let detailViewController = UIViewController()
-        detailViewController.title = cell.textLabel?.text
-        detailViewController.view.backgroundColor = UIColor.white
-        self.navigationController?.pushViewController(detailViewController, animated: true)
+        guard let plantName = cell.textLabel?.text else {return}
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        PlantStore.shared.getPlantDataWith(name: plantName) { [weak self] plantData in
+            if let view = self?.view {
+                MBProgressHUD.hide(for: view, animated: true)
+            }
+            if let data = plantData {
+                self?.pushDetailTVC(plantName: plantName, plantData: data)
+            }else {
+                self?.show(text: "🙁似乎遇到了一些小问题")
+            }
+        }
+    }
+    
+    private func show(text:String){
+        //初始化对话框，置于当前的View当中
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hud.label.text = text
+        hud.hide(animated: true, afterDelay: 1.5)
+    }
+    
+    private func pushDetailTVC(plantName: String, plantData: PlantData) {
+        let DatailStoryboard = UIStoryboard.init(name: "Detail", bundle: nil)
+        let plantDetailTVC = DatailStoryboard.instantiateInitialViewController() as? PlantDetailTableViewController
+        if let VC = plantDetailTVC {
+            VC.plantData = plantData
+            VC.navigationItem.title = plantName
+            self.navigationController?.pushViewController(VC, animated: true)
+        }
     }
     
     // MARK: - UIScrollViewDelegate

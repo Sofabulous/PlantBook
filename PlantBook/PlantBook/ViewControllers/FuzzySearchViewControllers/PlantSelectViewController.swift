@@ -23,17 +23,21 @@ class PlantSelectViewController: UIViewController {
                         if let plantDatas = plantDatas {
                             self?.showPlantListTVC(plantDatas)
                         }else {
-                            self?.show(text: "似乎遇到了一些小问题")
+                            self?.show(text: "🙁似乎遇到了一些小问题")
                         }
                     }
                 })
             }
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
+        self.navigationItem.title = "模糊搜索"
     }
     
     @IBAction func clickGymnospermsButton(_ sender: Any) {
@@ -60,6 +64,7 @@ class PlantSelectViewController: UIViewController {
         let plantListTVC = MainStoryboard.instantiateViewController(withIdentifier: "PlantListTableViewController") as? PlantListTableViewController
         if let VC = plantListTVC {
             VC.sourceData = plantDatas
+            VC.navigationItem.title = plantType?.getCHSName()
             self.navigationController?.pushViewController(VC, animated: true)
         }
     }

@@ -41,6 +41,8 @@ class PlantStore {
         NetworkService.searchPlantDataWith(name: name) { data in
             if let plantData = data {
                 handler(plantData)
+            }else {
+                handler(nil)
             }
         }
     }
@@ -49,7 +51,7 @@ class PlantStore {
         return plantDatas.count
     }
     
-    func item(at index:Int) -> PlantData? {
+    func data(at index:Int) -> PlantData? {
         guard index < plantDatas.count else { return nil}
         return plantDatas[index]
     }

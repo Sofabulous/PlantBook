@@ -33,18 +33,18 @@ class  NetworkService {
         let query = BmobQuery(className: "Plant")
         query?.whereKey(NetworkServiceKey.PlantData.name, equalTo: name)
         query?.findObjectsInBackground{ (array, error) in
+            var plantData:PlantData? = nil
             if let array = array {
                 if let object = array.first {
                     if let object = object as? BmobObject{
-                        if let plantData = transformToPlantData(object: object) {
-                            handler(plantData)
+                        if let data = transformToPlantData(object: object) {
+                            plantData = data
                         }
                     }
                 }
             }
-            handler(nil)
+            handler(plantData)
         }
-        
     }
     
     static private func transformToPlantData(object:BmobObject) -> PlantData? {
@@ -52,7 +52,7 @@ class  NetworkService {
         let url = URL(string: urlStr)
         let name = object.object(forKey: NetworkServiceKey.PlantData.name) as! String
         let name_en = object.object(forKey: NetworkServiceKey.PlantData.name_en) as! String
-        let taxonomy = object.object(forKey: NetworkServiceKey.PlantData.name_en) as! String
+        let taxonomy = object.object(forKey: NetworkServiceKey.PlantData.taxonomy) as! String
         // description
         let desc = object.object(forKey: NetworkServiceKey.PlantData.PlantDescription.desc) as! String
         let usage = object.object(forKey: NetworkServiceKey.PlantData.PlantDescription.usage) as! String
@@ -85,4 +85,15 @@ enum PlantType:String {
     case angiosperms = "angiosperms"
     case gymnosperms = "gymnosperms"
     case fern = "fern"
+    
+    func getCHSName() -> String{
+        switch self {
+        case .angiosperms:
+            return "被子植物"
+        case .gymnosperms:
+            return "裸子植物"
+        case .fern:
+            return "蕨类植物"
+        }
+    }
 }

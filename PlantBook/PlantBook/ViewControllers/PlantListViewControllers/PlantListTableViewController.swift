@@ -17,6 +17,11 @@ class PlantListTableViewController: UITableViewController {
         }
     }
     let placeImage = UIImage(named: "noPicture")
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Uncomment the following line to preserve selection between presentations
@@ -49,6 +54,14 @@ class PlantListTableViewController: UITableViewController {
             cell.plantNameLabel.text = plantData.name
         }
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyBoard = UIStoryboard.init(name: "Detail", bundle: nil)
+        if let PlantDetailTVC = storyBoard.instantiateInitialViewController() as? PlantDetailTableViewController {
+            PlantDetailTVC.plantData = PlantStore.shared.data(at: indexPath.row)
+            self.navigationController?.pushViewController(PlantDetailTVC, animated: true)
+        }
     }
 
 

@@ -7,41 +7,51 @@
 //
 
 import UIKit
-
+import Kingfisher
 class PlantDetailTableViewController: UITableViewController {
-
+    
+    @IBOutlet weak var collectionButton: UIBarButtonItem!
+    
+    @IBOutlet weak var plantImageView: UIImageView!
+    
+    @IBOutlet weak var name_enLabel: UILabel!
+    
+    @IBOutlet weak var taxonomyLabel: UILabel!
+    
+    @IBOutlet weak var descTextView: UITextView!
+    
+    @IBOutlet weak var usageTextView: UITextView!
+    
+    @IBOutlet weak var distributionLabel: UILabel!
+    
+    var plantData:PlantData?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        if let data = plantData {
+            plantImageView.kf.setImage(with: data.url)
+            navigationItem.title = data.name
+            name_enLabel.text = data.name_en
+            name_enLabel.adjustsFontSizeToFitWidth = true
+            taxonomyLabel.text = data.taxonomy
+            descTextView.text = data.description.desc
+            usageTextView.text = data.description.usage
+            distributionLabel.text = data.description.distribution
+        }
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.tableView.separatorStyle = .none
+        self.tableView.tableFooterView = UIView()
+        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.rowHeight = UITableView.automaticDimension
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 0
+//    }
+//
+    @IBAction func clickCollectionButton(_ sender: Any) {
+        
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

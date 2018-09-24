@@ -12,7 +12,6 @@
 		4220A4B82155F54E0019F84B /* PlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4220A4B72155F54E0019F84B /* PlantTableViewCell.swift */; };
 		4220A4BA2155F64B0019F84B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4220A4B92155F64B0019F84B /* NetworkService.swift */; };
 		4220A4BF2156359E0019F84B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4220A4BE2156359E0019F84B /* MBProgressHUD.m */; };
-		4220A4C221566B130019F84B /* PlantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4220A4C121566B130019F84B /* PlantDetailViewController.swift */; };
 		424C9D2E214E242F00ECBDA7 /* PlantStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424C9D2D214E242F00ECBDA7 /* PlantStore.swift */; };
 		424C9D30214E279200ECBDA7 /* AllPlants in Resources */ = {isa = PBXBuildFile; fileRef = 424C9D2F214E279200ECBDA7 /* AllPlants */; };
 		4257870C214546C30006E90B /* AnimatedAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4257870B214546C30006E90B /* AnimatedAnnotationView.swift */; };
@@ -37,7 +36,6 @@
 		4220A4B92155F64B0019F84B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		4220A4BD2156359E0019F84B /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		4220A4BE2156359E0019F84B /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		4220A4C121566B130019F84B /* PlantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailViewController.swift; sourceTree = "<group>"; };
 		424C9D2D214E242F00ECBDA7 /* PlantStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantStore.swift; sourceTree = "<group>"; };
 		424C9D2F214E279200ECBDA7 /* AllPlants */ = {isa = PBXFileReference; lastKnownFileType = text; path = AllPlants; sourceTree = "<group>"; };
 		4257870B214546C30006E90B /* AnimatedAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedAnnotationView.swift; sourceTree = "<group>"; };
@@ -117,14 +115,6 @@
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
-		4220A4C021566AEC0019F84B /* PlantDetailViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				4220A4C121566B130019F84B /* PlantDetailViewController.swift */,
-			);
-			path = PlantDetailViewControllers;
-			sourceTree = "<group>";
-		};
 		4257870A214546930006E90B /* Custom */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,7 +162,6 @@
 		4296D9D2213D8E5900EC05A8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				4220A4C021566AEC0019F84B /* PlantDetailViewControllers */,
 				42C783DA2141945B00F76B24 /* ViewModels */,
 				42C783C9214190E100F76B24 /* SearchViewControllers */,
 				42C783D42141938500F76B24 /* PlantListViewControllers */,
@@ -412,7 +401,6 @@
 				4220A4B82155F54E0019F84B /* PlantTableViewCell.swift in Sources */,
 				424C9D2E214E242F00ECBDA7 /* PlantStore.swift in Sources */,
 				42C783C821418FDE00F76B24 /* PlantMapViewController.swift in Sources */,
-				4220A4C221566B130019F84B /* PlantDetailViewController.swift in Sources */,
 				42C783D62141940400F76B24 /* PlantListTableViewController.swift in Sources */,
 				42C783CF214192BE00F76B24 /* PlantSelectViewController.swift in Sources */,
 				4296D9C1213D8DEA00EC05A8 /* AppDelegate.swift in Sources */,
