@@ -36,19 +36,18 @@ class PlantDetailTableViewController: UITableViewController {
             taxonomyLabel.text = data.taxonomy
             descTextView.text = data.description.desc
             usageTextView.text = data.description.usage
+            
             distributionLabel.text = data.description.distribution
+            distributionLabel.preferredMaxLayoutWidth = distributionLabel.frame.size.width
         }
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.tableView.separatorStyle = .none
         self.tableView.tableFooterView = UIView()
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
+//        self.tableView.cellForRow(at: IndexPath(row: 3, section: 0))
     }
     
-//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 0
-//    }
-//
     @IBAction func clickCollectionButton(_ sender: Any) {
         
     }
@@ -98,3 +97,13 @@ class PlantDetailTableViewController: UITableViewController {
     */
 
 }
+
+// 交由autolayout计算UITextView的高度
+//extension UITextView {
+//    func heightForTextView() -> CGFloat {
+//        let width = self.frame.width
+//        let size = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
+//        let constraint = self.sizeThatFits(size)
+//        return constraint.height
+//    }
+//}
