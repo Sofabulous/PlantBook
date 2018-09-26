@@ -18,4 +18,6 @@
 #import <BmobSDK/Bmob.h>//引入数据库所需头文件
 #import "MBProgressHUD.h"
 
+#import <BMKLocationkit/BMKLocationComponent.h>
+
 #endif /* PlantBook_Bridging_Header_h */
