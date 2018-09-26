@@ -99,24 +99,15 @@ class PlantBookTableViewController: UITableViewController,UISearchBarDelegate {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = self.tableView(tableView, cellForRowAt: indexPath)
         guard let plantName = cell.textLabel?.text else {return}
-        MBProgressHUD.showAdded(to: self.view, animated: true)
+        self.view.startLoading()
         PlantStore.shared.getPlantDataWith(name: plantName) { [weak self] plantData in
-            if let view = self?.view {
-                MBProgressHUD.hide(for: view, animated: true)
-            }
+            self?.view.endLoading()
             if let data = plantData {
                 self?.pushDetailTVC(plantName: plantName, plantData: data)
             }else {
-                self?.show(text: "🙁似乎遇到了一些小问题")
+                self?.view.show(text: "🙁似乎遇到了一些小问题")
             }
         }
-    }
-    
-    private func show(text:String){
-        //初始化对话框，置于当前的View当中
-        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
-        hud.label.text = text
-        hud.hide(animated: true, afterDelay: 1.5)
     }
     
     private func pushDetailTVC(plantName: String, plantData: PlantData) {
