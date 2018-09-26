@@ -59,6 +59,7 @@ class PlantListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard = UIStoryboard.init(name: "Detail", bundle: nil)
         if let PlantDetailTVC = storyBoard.instantiateInitialViewController() as? PlantDetailTableViewController {
+            tableView.deselectRow(at: indexPath, animated: true)
             PlantDetailTVC.plantData = PlantStore.shared.data(at: indexPath.row)
             self.navigationController?.pushViewController(PlantDetailTVC, animated: true)
         }
