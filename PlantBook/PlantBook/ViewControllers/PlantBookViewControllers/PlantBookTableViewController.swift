@@ -11,7 +11,7 @@ import UIKit
 class PlantBookTableViewController: UITableViewController,UISearchBarDelegate {
     var searchBar: UISearchBar?
     var searchBarView: UIView?
-    var resultArray:Array<PlantStore.plantName> = []
+    var resultArray:Array<PlantStore.PlantName> = []
     var characterDic:[String:Int] {
         get {
             var characterDic:[String:Int] = [:]

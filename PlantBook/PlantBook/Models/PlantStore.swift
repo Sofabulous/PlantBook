@@ -47,6 +47,23 @@ class PlantStore {
         }
     }
     
+    // 根据地点找到关联的位置
+    func getPlantDataWith(location:String, handler: @escaping ResultClosure) {
+        NetworkService.searchPlantDataWith(location: location) { [weak self] (datas, error) in
+            if let _ = error {
+                handler(nil,error)
+            }else {
+                if let plantDatas = datas as? [PlantData] {
+                    self?.plantDatas = plantDatas
+                    handler(plantDatas,nil)
+                }else {
+                    let dataError = PlantDataError.dataError
+                    handler(nil,dataError)
+                }
+            }
+        }
+    }
+    
     var count:Int {
         return plantDatas.count
     }
@@ -61,10 +78,10 @@ class PlantStore {
     
     static let latinPlantNames = CHSPlantNames.map { $0.transformTextToLatin() }
     
-    static let plantNames:[plantName] = {
-        var names:[plantName] = []
+    static let plantNames:[PlantName] = {
+        var names:[PlantName] = []
         for i in 0..<CHSPlantNames.count {
-            names.append(plantName(CHSPlantName: CHSPlantNames[i], latinPlantName: latinPlantNames[i]))
+            names.append(PlantName(CHSPlantName: CHSPlantNames[i], latinPlantName: latinPlantNames[i]))
         }
         let sortedNames = names.sorted {
             $0.latinPlantName < $1.latinPlantName
@@ -72,8 +89,18 @@ class PlantStore {
         return sortedNames
     }()
     
-    struct plantName {
+    struct PlantName {
         let CHSPlantName:String
         let latinPlantName:String
+    }
+    
+    static let plantLocations:[PlantLocation] = {
+        let Location1 = PlantLocation(latitude: 29.835631, longitude: 106.439491)
+        return [Location1]
+    }()
+
+    struct PlantLocation {
+        let latitude:Double
+        let longitude:Double
     }
 }

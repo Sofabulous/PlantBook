@@ -47,6 +47,27 @@ class  NetworkService {
         }
     }
     
+    static public func searchPlantDataWith(location: String, handler: @escaping BmobObjectArrayResultBlock) {
+        let query = BmobQuery(className: "Plant")
+        query?.whereKey(NetworkServiceKey.PlantData.location, equalTo: location)
+        query?.findObjectsInBackground { (array, error) in
+            if let array = array {
+                var plantDatas:[PlantData] = []
+                for object in array {
+                    if let object = object as? BmobObject{
+                        if let plantData = transformToPlantData(object: object) {
+                            plantDatas.append(plantData)
+                        }
+                    }
+                }
+                handler(plantDatas,error)
+            }else {
+                handler(nil,error)
+            }
+        }
+    }
+    
+    
     static private func transformToPlantData(object:BmobObject) -> PlantData? {
         let urlStr = object.object(forKey: NetworkServiceKey.PlantData.url) as! String
         let url = URL(string: urlStr)
@@ -78,6 +99,8 @@ struct NetworkServiceKey {
             /// 植物分布
             static let distribution = "distribution"
         }
+        /// model里没有的确定植物位置的字段
+        static let location = "location"
     }
 }
 

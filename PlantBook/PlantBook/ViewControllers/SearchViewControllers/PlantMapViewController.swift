@@ -11,6 +11,7 @@ import UIKit
 class PlantMapViewController: UIViewController,BMKMapViewDelegate {
     var _mapView: BMKMapView?
     var animatedAnnotation: BMKPointAnnotation?
+    var animatedAnnotations: [BMKPointAnnotation] = []
 //    var locationManager: BMKLocationManager!
 //    var userLocation: BMKUserLocation!
     override func viewDidLoad() {
@@ -25,7 +26,7 @@ class PlantMapViewController: UIViewController,BMKMapViewDelegate {
         super.viewWillAppear(animated)
         _mapView?.viewWillAppear()
         _mapView?.delegate = self // 此处记得不用的时候需要置nil，否则影响内存的释放
-        addAnimatedAnnotation()
+        addLocationAnimatedAnnotations()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -43,24 +44,34 @@ class PlantMapViewController: UIViewController,BMKMapViewDelegate {
     }
     */
     
-    // 添加动画Annotation
-    func addAnimatedAnnotation() {
-        if animatedAnnotation == nil {
-            animatedAnnotation = BMKPointAnnotation()
-            animatedAnnotation?.coordinate = CLLocationCoordinate2DMake(40.115, 116.404)
-            animatedAnnotation?.title = "我是动画Annotation"
+    func addLocationAnimatedAnnotations() {
+        for i in 1...PlantStore.plantLocations.count {
+            addAnimatedAnnotation(number: i)
         }
+    }
+    
+    // 添加动画Annotation
+    func addAnimatedAnnotation(number: Int) {
+        animatedAnnotation = BMKPointAnnotation()
+        let location = PlantStore.plantLocations[number - 1]
+        animatedAnnotation?.coordinate = CLLocationCoordinate2DMake(location.latitude, location.longitude)
+        animatedAnnotation?.title = "\(number)号点"
         _mapView?.addAnnotation(animatedAnnotation)
     }
     
     func mapView(_ mapView: BMKMapView!, viewFor annotation: BMKAnnotation!) -> BMKAnnotationView! {
         // 动画标注
-        if (annotation as! BMKPointAnnotation) == animatedAnnotation {
-            let AnnotationViewID = "AnimatedAnnotation"
+        if let point = annotation as? BMKPointAnnotation {
+            let AnnotationViewID = point.title
             let annotationView = AnimatedAnnotationView(annotation: annotation, reuseIdentifier: AnnotationViewID)
             let image = UIImage(named: "point.png")
             let images = [image!]
             annotationView.setImages(images)
+            guard let characterTag = point.title.first else {return nil} 
+            let stringTag = String.init(characterTag)
+            if let tag = Int.init(stringTag) {
+                annotationView.tag = tag
+            }
             return annotationView
         }
         return nil
@@ -81,7 +92,14 @@ class PlantMapViewController: UIViewController,BMKMapViewDelegate {
      *@param view 泡泡所属的annotation view
      */
     func mapView(_ mapView: BMKMapView!, annotationViewForBubble view: BMKAnnotationView!) {
-        NSLog("点击了泡泡")
+        print(view.tag)
+        PlantStore.shared.getPlantDataWith(location: String(view.tag)) { (plantDatas, error) in
+            if let plantData = plantDatas {
+                for data in  plantData {
+                    print(data)
+                }
+            }
+        }
     }
     
     /**
@@ -94,3 +112,4 @@ class PlantMapViewController: UIViewController,BMKMapViewDelegate {
     }
     
 }
+
