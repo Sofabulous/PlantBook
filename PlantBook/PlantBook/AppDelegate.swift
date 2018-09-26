@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate , BMKLocationAuthDelegate{
 
     var window: UIWindow?
 

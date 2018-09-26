@@ -440,7 +440,7 @@ typedef enum {
  *动态更新我的位置数据
  *	@param	[in]	userLocation	定位数据
  */
--(void)updateLocationData:(BMKUserLocation*)userLocation;
+-(void)updateLocationData:(BMKUserLocation *)userLocation;
 @end
 
 @interface BMKMapView (AnnotationAPI)

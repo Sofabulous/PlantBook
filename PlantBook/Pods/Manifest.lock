@@ -1,8 +1,8 @@
 PODS:
-  - BaiduMapKit (4.1.1)
-  - BMKLocationKit (1.2.1)
+  - BaiduMapKit (4.2.0)
+  - BMKLocationKit (1.3.0.2)
   - BmobSDK (2.3.1)
-  - Kingfisher (4.8.1)
+  - Kingfisher (4.10.0)
 
 DEPENDENCIES:
   - BaiduMapKit
@@ -18,11 +18,11 @@ SPEC REPOS:
     - Kingfisher
 
 SPEC CHECKSUMS:
-  BaiduMapKit: 51bba432a28316680676b4d453a70e5031f3a7eb
-  BMKLocationKit: c0fd588904738a6865e9311ed445c38452039007
+  BaiduMapKit: b6a8f31b3d2e4e5cad4084512a0d9a3878638272
+  BMKLocationKit: 6c47273f985609be0a0785f2f6f12bb7c1b7e8b6
   BmobSDK: e0f9e4b451233a80af63a8ae4f2d239474bf567b
-  Kingfisher: 868c1149679a7ab6869be118faa9b5aed154aaf0
+  Kingfisher: 43c4b802d8b5256cf1f4379e9cd10b329be6d3e2
 
-PODFILE CHECKSUM: 1558664bbfdc704f0c4d5bab454d140c7240f9bd
+PODFILE CHECKSUM: d5fc4747c6708dc79b785d1eafce76f8dccb7a46
 
 COCOAPODS: 1.5.0

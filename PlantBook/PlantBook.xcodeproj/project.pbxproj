@@ -15,6 +15,7 @@
 		424C9D2E214E242F00ECBDA7 /* PlantStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424C9D2D214E242F00ECBDA7 /* PlantStore.swift */; };
 		424C9D30214E279200ECBDA7 /* AllPlants in Resources */ = {isa = PBXBuildFile; fileRef = 424C9D2F214E279200ECBDA7 /* AllPlants */; };
 		4257870C214546C30006E90B /* AnimatedAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4257870B214546C30006E90B /* AnimatedAnnotationView.swift */; };
+		4277A5EF215B6AF400D204F0 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4277A5EE215B6AF400D204F0 /* UIView.swift */; };
 		4296D9C1213D8DEA00EC05A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4296D9C0213D8DEA00EC05A8 /* AppDelegate.swift */; };
 		4296D9C3213D8DEA00EC05A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4296D9C2213D8DEA00EC05A8 /* ViewController.swift */; };
 		4296D9C6213D8DEA00EC05A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4296D9C4213D8DEA00EC05A8 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		424C9D2D214E242F00ECBDA7 /* PlantStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantStore.swift; sourceTree = "<group>"; };
 		424C9D2F214E279200ECBDA7 /* AllPlants */ = {isa = PBXFileReference; lastKnownFileType = text; path = AllPlants; sourceTree = "<group>"; };
 		4257870B214546C30006E90B /* AnimatedAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedAnnotationView.swift; sourceTree = "<group>"; };
+		4277A5EE215B6AF400D204F0 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		4296D9BD213D8DEA00EC05A8 /* PlantBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4296D9C0213D8DEA00EC05A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4296D9C2213D8DEA00EC05A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				42E2A15021539F42009FCC27 /* String.swift */,
+				4277A5EE215B6AF400D204F0 /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -372,7 +375,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PlantBook/Pods-PlantBook-resources.sh",
-				"${PODS_ROOT}/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/Resources/mapapi.bundle",
+				"${PODS_ROOT}/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/mapapi.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -390,6 +393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4277A5EF215B6AF400D204F0 /* UIView.swift in Sources */,
 				4296D9C3213D8DEA00EC05A8 /* ViewController.swift in Sources */,
 				42E2A15121539F42009FCC27 /* String.swift in Sources */,
 				4257870C214546C30006E90B /* AnimatedAnnotationView.swift in Sources */,
@@ -553,10 +557,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HLHREAEH5Q;
 				INFOPLIST_FILE = plantBook/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yukun.swu.plantBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -575,10 +576,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HLHREAEH5Q;
 				INFOPLIST_FILE = plantBook/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yukun.swu.plantBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

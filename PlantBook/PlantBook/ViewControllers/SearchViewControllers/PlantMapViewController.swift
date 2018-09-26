@@ -8,31 +8,66 @@
 
 import UIKit
 
-class PlantMapViewController: UIViewController,BMKMapViewDelegate {
-    var _mapView: BMKMapView?
+class PlantMapViewController: UIViewController,BMKMapViewDelegate,BMKLocationManagerDelegate {
+    // 百度定位服务
+    var locationManager: BMKLocationManager!
+    var userLocation: BMKUserLocation!
+    
+    var mapView: BMKMapView?
     var animatedAnnotation: BMKPointAnnotation?
     var animatedAnnotations: [BMKPointAnnotation] = []
-//    var locationManager: BMKLocationManager!
-//    var userLocation: BMKUserLocation!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        _mapView = BMKMapView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
-        self.view.addSubview(_mapView!)
+        mapView = BMKMapView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        self.view.addSubview(mapView!)
         //TODO: 设置定位功能，由于目前百度不支持libc++，暂时不接入定位服务
 //        _mapView?.showsUserLocation = true
 //        _mapView?.userTrackingMode = BMKUserTrackingModeNone
+        // 初始化定位服务
+        setUpLocation()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        _mapView?.viewWillAppear()
-        _mapView?.delegate = self // 此处记得不用的时候需要置nil，否则影响内存的释放
+        mapView?.viewWillAppear()
+        mapView?.delegate = self // 此处记得不用的时候需要置nil，否则影响内存的释放
         addLocationAnimatedAnnotations()
+        getUserLocation()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        _mapView?.viewWillDisappear()
-        _mapView?.delegate = nil // 不用时，置nil
+        mapView?.viewWillDisappear()
+        mapView?.delegate = nil // 不用时，置nil
+    }
+    
+    private func setUpLocation() {
+        locationManager = BMKLocationManager()
+        locationManager.delegate = self
+        locationManager.coordinateType = BMKLocationCoordinateType.BMK09LL
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.activityType = CLActivityType.automotiveNavigation
+        locationManager.locationTimeout = 10
+        locationManager.allowsBackgroundLocationUpdates = false
+        userLocation = BMKUserLocation()
+        
+    }
+    
+    private func getUserLocation() {
+        mapView?.showsUserLocation = false//先关闭显示的定位图层
+        mapView?.userTrackingMode = BMKUserTrackingModeNone;//设置定位的状态
+        mapView?.showsUserLocation = true//显示定位图层
+        locationManager.requestLocation(withReGeocode: true, withNetworkState: true) { [weak self] (location, networkState, error) in
+            if let _ = error {
+                self?.view.show(text: "🤔获取定位出现了一些小意外")
+                return
+            }
+            if let myLocation = location {
+                self?.userLocation.location = myLocation.location
+                self?.mapView?.updateLocationData(self?.userLocation)
+            }
+        }
     }
     /*
     // MARK: - Navigation
@@ -56,7 +91,7 @@ class PlantMapViewController: UIViewController,BMKMapViewDelegate {
         let location = PlantStore.plantLocations[number - 1]
         animatedAnnotation?.coordinate = CLLocationCoordinate2DMake(location.latitude, location.longitude)
         animatedAnnotation?.title = "\(number)号点"
-        _mapView?.addAnnotation(animatedAnnotation)
+        mapView?.addAnnotation(animatedAnnotation)
     }
     
     func mapView(_ mapView: BMKMapView!, viewFor annotation: BMKAnnotation!) -> BMKAnnotationView! {
