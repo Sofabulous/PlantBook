@@ -47,6 +47,10 @@ class SearchResultViewController: UIViewController, UITableViewDelegate, UITable
         self.searchBar?.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         let text = searchText.transformTextToLatin()
         if text.isEmpty {
@@ -120,7 +124,7 @@ class SearchResultViewController: UIViewController, UITableViewDelegate, UITable
         if let VC = plantDetailTVC {
             VC.plantData = plantData
             VC.navigationItem.title = plantName
-            self.navigationController?.pushViewController(VC, animated: true)
+            self.rootNavigationController?.pushViewController(VC, animated: true)
         }
     }
 }
