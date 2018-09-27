@@ -1,0 +1,30 @@
+
+/* Class = "UILabel"; text = "蕨类植物"; ObjectID = "3Yh-yT-Ijj"; */
+"3Yh-yT-Ijj.text" = "蕨类植物";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "452-k3-sXM"; */
+"452-k3-sXM.text" = "Title";
+
+/* Class = "UITabBarItem"; title = "模糊搜索"; ObjectID = "7Me-oO-7NI"; */
+"7Me-oO-7NI.title" = "模糊搜索";
+
+/* Class = "UILabel"; text = "裸子植物"; ObjectID = "JWb-Cx-sGn"; */
+"JWb-Cx-sGn.text" = "裸子植物";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "OjW-0x-7gR"; */
+"OjW-0x-7gR.text" = "Label";
+
+/* Class = "UILabel"; text = "被子植物"; ObjectID = "TGv-Vv-JvR"; */
+"TGv-Vv-JvR.text" = "被子植物";
+
+/* Class = "UITabBarItem"; title = "校园地图"; ObjectID = "TbX-ul-E3r"; */
+"TbX-ul-E3r.title" = "校园地图";
+
+/* Class = "UILabel"; text = "竹子"; ObjectID = "bHR-8l-Zqs"; */
+"bHR-8l-Zqs.text" = "竹子";
+
+/* Class = "UITabBarItem"; title = "植物图志"; ObjectID = "k0D-pt-gjI"; */
+"k0D-pt-gjI.title" = "植物图志";
+
+/* Class = "UITabBarItem"; title = "收藏夹"; ObjectID = "wpv-kk-K57"; */
+"wpv-kk-K57.title" = "收藏夹";

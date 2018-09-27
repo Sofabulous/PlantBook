@@ -27,6 +27,7 @@
 		42C783D32141933100F76B24 /* PlantBookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C783D22141933100F76B24 /* PlantBookTableViewController.swift */; };
 		42C783D62141940400F76B24 /* PlantListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C783D52141940400F76B24 /* PlantListTableViewController.swift */; };
 		42C783D82141943200F76B24 /* PlantDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C783D72141943200F76B24 /* PlantDetailTableViewController.swift */; };
+		42CAC655215CB66F002B9C7F /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CAC654215CB66F002B9C7F /* SearchResultViewController.swift */; };
 		42E2A15121539F42009FCC27 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E2A15021539F42009FCC27 /* String.swift */; };
 		42E2A1532154E17E009FCC27 /* RootPlantBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E2A1522154E17E009FCC27 /* RootPlantBookViewController.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,9 @@
 		42C783D22141933100F76B24 /* PlantBookTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantBookTableViewController.swift; sourceTree = "<group>"; };
 		42C783D52141940400F76B24 /* PlantListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantListTableViewController.swift; sourceTree = "<group>"; };
 		42C783D72141943200F76B24 /* PlantDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailTableViewController.swift; sourceTree = "<group>"; };
+		42CAC654215CB66F002B9C7F /* SearchResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		42CAC656215CBEEF002B9C7F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		42CAC657215CBEEF002B9C7F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		42E2A15021539F42009FCC27 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		42E2A1522154E17E009FCC27 /* RootPlantBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPlantBookViewController.swift; sourceTree = "<group>"; };
 		A31FB9E31EF31C47B6A0D649 /* Pods_PlantBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlantBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +124,7 @@
 		4257870A214546930006E90B /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				42CAC654215CB66F002B9C7F /* SearchResultViewController.swift */,
 				4257870B214546C30006E90B /* AnimatedAnnotationView.swift */,
 			);
 			path = Custom;
@@ -406,6 +411,7 @@
 				424C9D2E214E242F00ECBDA7 /* PlantStore.swift in Sources */,
 				42C783C821418FDE00F76B24 /* PlantMapViewController.swift in Sources */,
 				42C783D62141940400F76B24 /* PlantListTableViewController.swift in Sources */,
+				42CAC655215CB66F002B9C7F /* SearchResultViewController.swift in Sources */,
 				42C783CF214192BE00F76B24 /* PlantSelectViewController.swift in Sources */,
 				4296D9C1213D8DEA00EC05A8 /* AppDelegate.swift in Sources */,
 				42E2A1532154E17E009FCC27 /* RootPlantBookViewController.swift in Sources */,
@@ -419,6 +425,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				4296D9C5213D8DEA00EC05A8 /* Base */,
+				42CAC656215CBEEF002B9C7F /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -427,6 +434,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				4296D9CA213D8DEC00EC05A8 /* Base */,
+				42CAC657215CBEEF002B9C7F /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -438,6 +446,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -498,6 +507,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -557,7 +567,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HLHREAEH5Q;
 				INFOPLIST_FILE = plantBook/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yukun.swu.plantBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -576,7 +589,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HLHREAEH5Q;
 				INFOPLIST_FILE = plantBook/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yukun.swu.plantBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

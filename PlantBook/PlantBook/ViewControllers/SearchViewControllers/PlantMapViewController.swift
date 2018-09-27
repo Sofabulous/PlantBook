@@ -8,7 +8,10 @@
 
 import UIKit
 
-class PlantMapViewController: UIViewController,BMKMapViewDelegate,BMKLocationManagerDelegate {
+class PlantMapViewController: UIViewController,BMKMapViewDelegate,BMKLocationManagerDelegate, UISearchResultsUpdating, UISearchControllerDelegate, UISearchBarDelegate {
+    
+    var searchController: UISearchController?
+    var resultsController: SearchResultViewController?
     // 百度定位服务
     var locationManager: BMKLocationManager!
     var userLocation: BMKUserLocation!
@@ -21,11 +24,9 @@ class PlantMapViewController: UIViewController,BMKMapViewDelegate,BMKLocationMan
         super.viewDidLoad()
         mapView = BMKMapView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         self.view.addSubview(mapView!)
-        //TODO: 设置定位功能，由于目前百度不支持libc++，暂时不接入定位服务
-//        _mapView?.showsUserLocation = true
-//        _mapView?.userTrackingMode = BMKUserTrackingModeNone
         // 初始化定位服务
         setUpLocation()
+        addSearchController()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,6 +35,7 @@ class PlantMapViewController: UIViewController,BMKMapViewDelegate,BMKLocationMan
         mapView?.delegate = self // 此处记得不用的时候需要置nil，否则影响内存的释放
         addLocationAnimatedAnnotations()
         getUserLocation()
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -41,7 +43,34 @@ class PlantMapViewController: UIViewController,BMKMapViewDelegate,BMKLocationMan
         mapView?.viewWillDisappear()
         mapView?.delegate = nil // 不用时，置nil
     }
+    //MARK:- SearchController method
+    private func addSearchController() {
+        let resultsController = SearchResultViewController()
+        let searchController = UISearchController(searchResultsController: resultsController)
+        searchController.searchResultsUpdater = self
+        searchController.delegate = self
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.sizeToFit()
+        
+        searchController.searchBar.delegate = self
+        searchController.searchBar.placeholder = "搜索"
+        resultsController.searchBar = searchController.searchBar
+        resultsController.rootNavigationController = self.navigationController
+        
+        self.resultsController = resultsController
+        self.searchController = searchController
+        
+        self.navigationItem.titleView = searchController.searchBar
+        self.definesPresentationContext = true
+    }
     
+    //MARK:- UISearchResultsUpdating
+    func updateSearchResults(for searchController: UISearchController) {
+        //TODO:切换用户到对应的地点
+    }
+    
+    //MARK:- location method
     private func setUpLocation() {
         locationManager = BMKLocationManager()
         locationManager.delegate = self
@@ -69,16 +98,8 @@ class PlantMapViewController: UIViewController,BMKMapViewDelegate,BMKLocationMan
             }
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
+    //MARK:- locationAnimatedAnnotations method
     func addLocationAnimatedAnnotations() {
         for i in 1...PlantStore.plantLocations.count {
             addAnimatedAnnotation(number: i)
@@ -94,6 +115,7 @@ class PlantMapViewController: UIViewController,BMKMapViewDelegate,BMKLocationMan
         mapView?.addAnnotation(animatedAnnotation)
     }
     
+    //MARK:- BMKMapViewDelegate
     func mapView(_ mapView: BMKMapView!, viewFor annotation: BMKAnnotation!) -> BMKAnnotationView! {
         // 动画标注
         if let point = annotation as? BMKPointAnnotation {
@@ -112,6 +134,7 @@ class PlantMapViewController: UIViewController,BMKMapViewDelegate,BMKLocationMan
         return nil
     }
     
+    //MARK:- BMKMapViewDelegate
     /**
      *当mapView新添加annotation views时，调用此接口
      *@param mapView 地图View
