@@ -120,10 +120,8 @@ class PlantBookTableViewController: UITableViewController,UISearchBarDelegate {
         }
     }
     
-    // MARK: - UIScrollViewDelegate
-    
+    // MARK: - UIScrollViewMethod
     override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         self.searchBar?.resignFirstResponder()
     }
-
 }

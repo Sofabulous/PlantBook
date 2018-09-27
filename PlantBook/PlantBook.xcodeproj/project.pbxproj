@@ -15,6 +15,7 @@
 		424C9D2E214E242F00ECBDA7 /* PlantStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424C9D2D214E242F00ECBDA7 /* PlantStore.swift */; };
 		424C9D30214E279200ECBDA7 /* AllPlants in Resources */ = {isa = PBXBuildFile; fileRef = 424C9D2F214E279200ECBDA7 /* AllPlants */; };
 		4257870C214546C30006E90B /* AnimatedAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4257870B214546C30006E90B /* AnimatedAnnotationView.swift */; };
+		42624404215CF57E0056BA96 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42624403215CF57E0056BA96 /* SearchResultViewController.swift */; };
 		4277A5EF215B6AF400D204F0 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4277A5EE215B6AF400D204F0 /* UIView.swift */; };
 		4296D9C1213D8DEA00EC05A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4296D9C0213D8DEA00EC05A8 /* AppDelegate.swift */; };
 		4296D9C3213D8DEA00EC05A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4296D9C2213D8DEA00EC05A8 /* ViewController.swift */; };
@@ -27,7 +28,6 @@
 		42C783D32141933100F76B24 /* PlantBookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C783D22141933100F76B24 /* PlantBookTableViewController.swift */; };
 		42C783D62141940400F76B24 /* PlantListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C783D52141940400F76B24 /* PlantListTableViewController.swift */; };
 		42C783D82141943200F76B24 /* PlantDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C783D72141943200F76B24 /* PlantDetailTableViewController.swift */; };
-		42CAC655215CB66F002B9C7F /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CAC654215CB66F002B9C7F /* SearchResultViewController.swift */; };
 		42E2A15121539F42009FCC27 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E2A15021539F42009FCC27 /* String.swift */; };
 		42E2A1532154E17E009FCC27 /* RootPlantBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E2A1522154E17E009FCC27 /* RootPlantBookViewController.swift */; };
 /* End PBXBuildFile section */
@@ -41,6 +41,7 @@
 		424C9D2D214E242F00ECBDA7 /* PlantStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantStore.swift; sourceTree = "<group>"; };
 		424C9D2F214E279200ECBDA7 /* AllPlants */ = {isa = PBXFileReference; lastKnownFileType = text; path = AllPlants; sourceTree = "<group>"; };
 		4257870B214546C30006E90B /* AnimatedAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedAnnotationView.swift; sourceTree = "<group>"; };
+		42624403215CF57E0056BA96 /* SearchResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		4277A5EE215B6AF400D204F0 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		4296D9BD213D8DEA00EC05A8 /* PlantBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4296D9C0213D8DEA00EC05A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,7 +57,6 @@
 		42C783D22141933100F76B24 /* PlantBookTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantBookTableViewController.swift; sourceTree = "<group>"; };
 		42C783D52141940400F76B24 /* PlantListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantListTableViewController.swift; sourceTree = "<group>"; };
 		42C783D72141943200F76B24 /* PlantDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailTableViewController.swift; sourceTree = "<group>"; };
-		42CAC654215CB66F002B9C7F /* SearchResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		42CAC656215CBEEF002B9C7F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		42CAC657215CBEEF002B9C7F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		42E2A15021539F42009FCC27 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -124,7 +124,6 @@
 		4257870A214546930006E90B /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				42CAC654215CB66F002B9C7F /* SearchResultViewController.swift */,
 				4257870B214546C30006E90B /* AnimatedAnnotationView.swift */,
 			);
 			path = Custom;
@@ -197,8 +196,9 @@
 		42C783C9214190E100F76B24 /* SearchViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				4257870A214546930006E90B /* Custom */,
 				42C783C721418FDE00F76B24 /* PlantMapViewController.swift */,
+				42624403215CF57E0056BA96 /* SearchResultViewController.swift */,
+				4257870A214546930006E90B /* Custom */,
 			);
 			path = SearchViewControllers;
 			sourceTree = "<group>";
@@ -411,7 +411,7 @@
 				424C9D2E214E242F00ECBDA7 /* PlantStore.swift in Sources */,
 				42C783C821418FDE00F76B24 /* PlantMapViewController.swift in Sources */,
 				42C783D62141940400F76B24 /* PlantListTableViewController.swift in Sources */,
-				42CAC655215CB66F002B9C7F /* SearchResultViewController.swift in Sources */,
+				42624404215CF57E0056BA96 /* SearchResultViewController.swift in Sources */,
 				42C783CF214192BE00F76B24 /* PlantSelectViewController.swift in Sources */,
 				4296D9C1213D8DEA00EC05A8 /* AppDelegate.swift in Sources */,
 				42E2A1532154E17E009FCC27 /* RootPlantBookViewController.swift in Sources */,

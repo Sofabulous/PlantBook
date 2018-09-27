@@ -152,12 +152,9 @@ class PlantMapViewController: UIViewController,BMKMapViewDelegate,BMKLocationMan
      *@param view 泡泡所属的annotation view
      */
     func mapView(_ mapView: BMKMapView!, annotationViewForBubble view: BMKAnnotationView!) {
-        print(view.tag)
-        PlantStore.shared.getPlantDataWith(location: String(view.tag)) { (plantDatas, error) in
-            if let plantData = plantDatas {
-                for data in  plantData {
-                    print(data)
-                }
+        PlantStore.shared.getPlantDataWith(location: String(view.tag)) { [weak self](datas, error) in
+            if let plantDatas = datas {
+                self?.showPlantListTVC(plantDatas,with: "\(view.tag)号点")
             }
         }
     }
@@ -171,5 +168,14 @@ class PlantMapViewController: UIViewController,BMKMapViewDelegate,BMKLocationMan
         NSLog("取消选中标注")
     }
     
+    func showPlantListTVC (_ plantDatas: [PlantData],with title:String) {
+        let MainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let plantListTVC = MainStoryboard.instantiateViewController(withIdentifier: "PlantListTableViewController") as? PlantListTableViewController
+        if let VC = plantListTVC {
+            VC.sourceData = plantDatas
+            VC.navigationItem.title = title
+            self.navigationController?.pushViewController(VC, animated: true)
+        }
+    }
 }
 
