@@ -224,7 +224,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CWS-Sm-xaJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1672.4637681159422" y="841.304347826087"/>
+            <point key="canvasLocation" x="2516" y="-910"/>
         </scene>
         <!--Plant Book Table View Controller-->
         <scene sceneID="4P1-2H-a2g">
@@ -378,12 +378,50 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="d50-rs-deT" kind="relationship" relationship="rootViewController" id="Lz0-7p-WkM"/>
+                        <segue destination="dAd-zY-ytt" kind="relationship" relationship="rootViewController" id="KhM-ak-ePv"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ec-az-BVx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="765.21739130434787" y="841.304347826087"/>
+        </scene>
+        <!--User Favorites Table View Controller-->
+        <scene sceneID="2Aq-J6-i8c">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OqK-cX-Hrz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="dAd-zY-ytt" customClass="UserFavoritesTableViewController" customModule="PlantBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Vsf-sp-YDu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detail" textLabel="oYx-00-Fbz" style="IBUITableViewCellStyleDefault" id="jAD-PK-TIM">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jAD-PK-TIM" id="sj7-Uh-WCr">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oYx-00-Fbz">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="dAd-zY-ytt" id="i67-uU-TW3"/>
+                            <outlet property="delegate" destination="dAd-zY-ytt" id="lgI-2T-mGL"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="4G9-Sg-pk2"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="1671" y="841"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Skm-ge-x52">
@@ -418,11 +456,11 @@
     <resources>
         <image name="angiosperms" width="108" height="120"/>
         <image name="bamboo" width="112" height="120"/>
-        <image name="favorites" width="28" height="32"/>
+        <image name="favorites" width="22" height="26"/>
         <image name="ferns" width="112" height="120"/>
         <image name="gymnosperms" width="112" height="120"/>
-        <image name="map" width="30" height="30"/>
-        <image name="plant" width="36" height="36"/>
-        <image name="search" width="32" height="32"/>
+        <image name="map" width="24" height="22"/>
+        <image name="plant" width="28" height="28"/>
+        <image name="search" width="25" height="24"/>
     </resources>
 </document>

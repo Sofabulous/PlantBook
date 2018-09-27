@@ -23,11 +23,14 @@
 		4296D9C8213D8DEC00EC05A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4296D9C7213D8DEC00EC05A8 /* Assets.xcassets */; };
 		4296D9CB213D8DEC00EC05A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4296D9C9213D8DEC00EC05A8 /* LaunchScreen.storyboard */; };
 		42A040DA2143E27000DDEBB4 /* PlantData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A040D92143E27000DDEBB4 /* PlantData.swift */; };
+		42C47239215D2978008265BB /* UserFavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C47238215D2978008265BB /* UserFavoritesTableViewController.swift */; };
 		42C783C821418FDE00F76B24 /* PlantMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C783C721418FDE00F76B24 /* PlantMapViewController.swift */; };
 		42C783CF214192BE00F76B24 /* PlantSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C783CE214192BE00F76B24 /* PlantSelectViewController.swift */; };
 		42C783D32141933100F76B24 /* PlantBookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C783D22141933100F76B24 /* PlantBookTableViewController.swift */; };
 		42C783D62141940400F76B24 /* PlantListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C783D52141940400F76B24 /* PlantListTableViewController.swift */; };
 		42C783D82141943200F76B24 /* PlantDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C783D72141943200F76B24 /* PlantDetailTableViewController.swift */; };
+		42DEC62A215D189B005673FA /* GSKeyChainDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DEC627215D189A005673FA /* GSKeyChainDataManager.m */; };
+		42DEC62B215D189B005673FA /* GSKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DEC629215D189A005673FA /* GSKeyChain.m */; };
 		42E2A15121539F42009FCC27 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E2A15021539F42009FCC27 /* String.swift */; };
 		42E2A1532154E17E009FCC27 /* RootPlantBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E2A1522154E17E009FCC27 /* RootPlantBookViewController.swift */; };
 /* End PBXBuildFile section */
@@ -52,6 +55,7 @@
 		4296D9CC213D8DEC00EC05A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42A040D92143E27000DDEBB4 /* PlantData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantData.swift; sourceTree = "<group>"; };
 		42A040DC214404EA00DDEBB4 /* PlantBook-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PlantBook-Bridging-Header.h"; sourceTree = "<group>"; };
+		42C47238215D2978008265BB /* UserFavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFavoritesTableViewController.swift; sourceTree = "<group>"; };
 		42C783C721418FDE00F76B24 /* PlantMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantMapViewController.swift; sourceTree = "<group>"; };
 		42C783CE214192BE00F76B24 /* PlantSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantSelectViewController.swift; sourceTree = "<group>"; };
 		42C783D22141933100F76B24 /* PlantBookTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantBookTableViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +63,10 @@
 		42C783D72141943200F76B24 /* PlantDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailTableViewController.swift; sourceTree = "<group>"; };
 		42CAC656215CBEEF002B9C7F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		42CAC657215CBEEF002B9C7F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		42DEC626215D189A005673FA /* GSKeyChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSKeyChain.h; sourceTree = "<group>"; };
+		42DEC627215D189A005673FA /* GSKeyChainDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSKeyChainDataManager.m; sourceTree = "<group>"; };
+		42DEC628215D189A005673FA /* GSKeyChainDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSKeyChainDataManager.h; sourceTree = "<group>"; };
+		42DEC629215D189A005673FA /* GSKeyChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSKeyChain.m; sourceTree = "<group>"; };
 		42E2A15021539F42009FCC27 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		42E2A1522154E17E009FCC27 /* RootPlantBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPlantBookViewController.swift; sourceTree = "<group>"; };
 		A31FB9E31EF31C47B6A0D649 /* Pods_PlantBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlantBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +115,7 @@
 		4220A4BB2156353A0019F84B /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				42DEC625215D1870005673FA /* KeyChain */,
 				4220A4BC215635760019F84B /* MBProgressHUD */,
 			);
 			path = Utils;
@@ -169,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				42C783DA2141945B00F76B24 /* ViewModels */,
+				42C47237215D28D6008265BB /* UserFavoritesViewControllers */,
 				42C783C9214190E100F76B24 /* SearchViewControllers */,
 				42C783D42141938500F76B24 /* PlantListViewControllers */,
 				42C783CB2141917800F76B24 /* PlantBookViewControllers */,
@@ -191,6 +201,14 @@
 				42A040DC214404EA00DDEBB4 /* PlantBook-Bridging-Header.h */,
 			);
 			path = "Bridging-Header";
+			sourceTree = "<group>";
+		};
+		42C47237215D28D6008265BB /* UserFavoritesViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				42C47238215D2978008265BB /* UserFavoritesTableViewController.swift */,
+			);
+			path = UserFavoritesViewControllers;
 			sourceTree = "<group>";
 		};
 		42C783C9214190E100F76B24 /* SearchViewControllers */ = {
@@ -245,6 +263,17 @@
 			children = (
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		42DEC625215D1870005673FA /* KeyChain */ = {
+			isa = PBXGroup;
+			children = (
+				42DEC626215D189A005673FA /* GSKeyChain.h */,
+				42DEC629215D189A005673FA /* GSKeyChain.m */,
+				42DEC628215D189A005673FA /* GSKeyChainDataManager.h */,
+				42DEC627215D189A005673FA /* GSKeyChainDataManager.m */,
+			);
+			path = KeyChain;
 			sourceTree = "<group>";
 		};
 		42E2A14F21539E92009FCC27 /* Extensions */ = {
@@ -400,6 +429,7 @@
 			files = (
 				4277A5EF215B6AF400D204F0 /* UIView.swift in Sources */,
 				4296D9C3213D8DEA00EC05A8 /* ViewController.swift in Sources */,
+				42C47239215D2978008265BB /* UserFavoritesTableViewController.swift in Sources */,
 				42E2A15121539F42009FCC27 /* String.swift in Sources */,
 				4257870C214546C30006E90B /* AnimatedAnnotationView.swift in Sources */,
 				42C783D32141933100F76B24 /* PlantBookTableViewController.swift in Sources */,
@@ -407,12 +437,14 @@
 				42A040DA2143E27000DDEBB4 /* PlantData.swift in Sources */,
 				4220A4BA2155F64B0019F84B /* NetworkService.swift in Sources */,
 				4220A4BF2156359E0019F84B /* MBProgressHUD.m in Sources */,
+				42DEC62A215D189B005673FA /* GSKeyChainDataManager.m in Sources */,
 				4220A4B82155F54E0019F84B /* PlantTableViewCell.swift in Sources */,
 				424C9D2E214E242F00ECBDA7 /* PlantStore.swift in Sources */,
 				42C783C821418FDE00F76B24 /* PlantMapViewController.swift in Sources */,
 				42C783D62141940400F76B24 /* PlantListTableViewController.swift in Sources */,
 				42624404215CF57E0056BA96 /* SearchResultViewController.swift in Sources */,
 				42C783CF214192BE00F76B24 /* PlantSelectViewController.swift in Sources */,
+				42DEC62B215D189B005673FA /* GSKeyChain.m in Sources */,
 				4296D9C1213D8DEA00EC05A8 /* AppDelegate.swift in Sources */,
 				42E2A1532154E17E009FCC27 /* RootPlantBookViewController.swift in Sources */,
 			);

@@ -115,6 +115,7 @@ class SearchResultViewController: UIViewController, UITableViewDelegate, UITable
             }else {
                 self?.view.show(text: "🙁似乎遇到了一些小问题")
             }
+            self?.tableView.deselectRow(at: indexPath, animated: true)
         }
     }
     

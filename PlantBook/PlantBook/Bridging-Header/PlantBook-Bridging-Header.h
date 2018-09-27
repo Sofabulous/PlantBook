@@ -20,4 +20,5 @@
 
 #import <BMKLocationkit/BMKLocationComponent.h>
 
+#import "GSKeyChainDataManager.h" // 使用keychain存储用户喜爱数据
 #endif /* PlantBook_Bridging_Header_h */

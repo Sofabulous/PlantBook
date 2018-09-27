@@ -28,6 +28,10 @@ class PlantDetailTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpUI()
+    }
+    
+    private func setUpUI() {
         if let data = plantData {
             plantImageView.kf.setImage(with: data.url)
             navigationItem.title = data.name
@@ -39,17 +43,33 @@ class PlantDetailTableViewController: UITableViewController {
             
             distributionLabel.text = data.description.distribution
             distributionLabel.preferredMaxLayoutWidth = distributionLabel.frame.size.width
+            
+            if PlantStore.shared.userFavorites.contains(data.name) {
+                collectionButton.image = UIImage(named: "solid-heart")
+            }else {
+                collectionButton.image = UIImage(named: "hollow-heart")
+            }
         }
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.tableView.separatorStyle = .none
         self.tableView.tableFooterView = UIView()
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
-//        self.tableView.cellForRow(at: IndexPath(row: 3, section: 0))
     }
     
     @IBAction func clickCollectionButton(_ sender: Any) {
-        
+        if collectionButton.image == UIImage(named: "solid-heart") {
+            collectionButton.image = UIImage(named: "hollow-heart")
+            if let name = plantData?.name {
+                guard let index = PlantStore.shared.userFavorites.firstIndex(of: name) else {return}
+                PlantStore.shared.userFavorites.remove(at: index)
+            }
+        }else {
+            collectionButton.image = UIImage(named: "solid-heart")
+            if let name = plantData?.name {
+                PlantStore.shared.userFavorites.append(name)
+            }
+        }
     }
     /*
     // Override to support conditional editing of the table view.

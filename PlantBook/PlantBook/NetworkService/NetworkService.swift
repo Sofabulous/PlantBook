@@ -9,16 +9,16 @@
 import Foundation
 class  NetworkService {
     static public func registerUser(id userID:String,_ handler: @escaping BmobBooleanResultBlock) {
-        let UserTabel:BmobObject = BmobObject(className: "UserTabel")
-        UserTabel.setObject(userID, forKey: NetworkServiceKey.userIdentifier)
-        UserTabel.saveInBackground(resultBlock: handler)
+        let UserTable:BmobObject = BmobObject(className: "UserTable")
+        UserTable.setObject(userID, forKey: NetworkServiceKey.userIdentifier)
+        UserTable.saveInBackground(resultBlock: handler)
     }
     
     static public func uploadUserFavorites(Favorites:[String], handler: ((Error?) -> Void)? ) {
         getObjectByUUID { (array, error) in
             if let array = array {
                 if let userData = array.first as? BmobObject {
-                    userData.addObjects(from: Favorites, forKey: NetworkServiceKey.userFavorites)
+                    userData.addUniqueObjects(from: Favorites, forKey: NetworkServiceKey.userFavorites)
                     userData.updateInBackground(resultBlock: { (isSuccessful, error) in
                         if isSuccessful {
                             handler?(nil)
@@ -125,7 +125,7 @@ class  NetworkService {
     
     static private func getObjectByUUID(handler: @escaping BmobObjectArrayResultBlock) {
         guard let userID = GSKeyChainDataManager.readUUID() else { return }
-        let query = BmobQuery(className: "PlanTabel")
+        let query = BmobQuery(className: "UserTable")
         query?.whereKey(NetworkServiceKey.userIdentifier, equalTo: userID)
         query?.findObjectsInBackground(handler)
     }

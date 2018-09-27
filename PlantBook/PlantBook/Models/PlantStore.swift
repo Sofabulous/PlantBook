@@ -25,8 +25,8 @@ class PlantStore {
     public var userFavorites:[String] = [] {
         willSet {
             if !isLoaded {
-                NetworkService.uploadUserFavorites(Favorites: newValue) { (error) in
-                    if let error = error {
+                NetworkService.uploadUserFavorites(Favorites: newValue) { (e) in
+                    if let error = e {
                         print("error is \(error.localizedDescription)")
                     }
                 }
@@ -39,8 +39,9 @@ class PlantStore {
             //TODO: 得到用户喜号植物
             NetworkService.getUserFavorites { [weak self] (favorites, error) in
                 if let userFavorites = favorites {
-                    self?.userFavorites = userFavorites
-                    self?.isLoaded = false
+                    if self?.userFavorites != userFavorites {
+                        self?.userFavorites = userFavorites
+                    }
                 }
             }
         }else {
@@ -54,6 +55,7 @@ class PlantStore {
                 }
             })
         }
+        self.isLoaded = false
     }
     
     func getPlantDataWith(type:PlantType, handler: @escaping ResultClosure) {
