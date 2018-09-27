@@ -22,6 +22,7 @@ class PlantMapViewController: UIViewController,BMKMapViewDelegate,BMKLocationMan
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        PlantStore.shared.getUserFavorites()
         mapView = BMKMapView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         self.view.addSubview(mapView!)
         // 初始化定位服务

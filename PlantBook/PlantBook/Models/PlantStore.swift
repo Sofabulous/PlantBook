@@ -20,7 +20,42 @@ class PlantStore {
     
     typealias ResultClosure = ([PlantData]?,Error?) -> Void
     typealias PlantDataClosure = (PlantData?) -> Void
-
+    
+    // 用户喜爱植物
+    public var userFavorites:[String] = [] {
+        willSet {
+            if !isLoaded {
+                NetworkService.uploadUserFavorites(Favorites: newValue) { (error) in
+                    if let error = error {
+                        print("error is \(error.localizedDescription)")
+                    }
+                }
+            }
+        }
+    }
+    private var isLoaded = true
+    func getUserFavorites() {
+        if let _ = GSKeyChainDataManager.readUUID() {
+            //TODO: 得到用户喜号植物
+            NetworkService.getUserFavorites { [weak self] (favorites, error) in
+                if let userFavorites = favorites {
+                    self?.userFavorites = userFavorites
+                    self?.isLoaded = false
+                }
+            }
+        }else {
+            guard let userID = UIDevice.current.identifierForVendor?.uuidString else {return}
+            NetworkService.registerUser(id: userID, {(isSuccessful, error) in
+                if let error = error {
+                    print("error is \(error.localizedDescription)")
+                }else {
+                    GSKeyChainDataManager.saveUUID(userID)
+                    print("registerUser successfully")
+                }
+            })
+        }
+    }
+    
     func getPlantDataWith(type:PlantType, handler: @escaping ResultClosure) {
         NetworkService.getPlantDataWith(type: type) { [weak self] (datas, error) in
             if let _ = error {
