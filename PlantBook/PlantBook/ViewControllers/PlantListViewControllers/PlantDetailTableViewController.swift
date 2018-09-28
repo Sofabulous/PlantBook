@@ -33,7 +33,8 @@ class PlantDetailTableViewController: UITableViewController {
     
     private func setUpUI() {
         if let data = plantData {
-            plantImageView.kf.setImage(with: data.url)
+            let placeholderImage = UIImage(named: "noPicture_big")
+            plantImageView.kf.setImage(with: data.url, placeholder: placeholderImage, options: nil, progressBlock: nil, completionHandler: nil)
             navigationItem.title = data.name
             name_enLabel.text = data.name_en
             name_enLabel.adjustsFontSizeToFitWidth = true
