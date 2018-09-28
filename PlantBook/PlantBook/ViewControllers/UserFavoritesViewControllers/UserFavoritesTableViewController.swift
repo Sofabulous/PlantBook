@@ -10,6 +10,9 @@ import UIKit
 
 class UserFavoritesTableViewController: UITableViewController {
     
+    var noDataView:UIView?
+    var haveNoDataView:Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.tableFooterView = UIView()
@@ -19,12 +22,32 @@ class UserFavoritesTableViewController: UITableViewController {
         } else {
             // Fallback on earlier versions
         }
+        if let noDataView = Bundle.main.loadNibNamed("NoDataView", owner: nil, options: nil)?.last as? UIView {
+            noDataView.frame = self.tableView.frame
+            self.noDataView = noDataView
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        PlantStore.shared.getUserFavorites()
-        self.tableView.reloadData()
+        PlantStore.shared.getUserFavorites { [weak self] (isSuccessful) in
+            guard let `self` = self else {return}
+            if isSuccessful {
+                if PlantStore.shared.userFavoritesCount == 0 {
+                    if let noDataView = self.noDataView {
+                        self.tableView.addSubview(noDataView)
+                        self.haveNoDataView = true
+                    }
+                }else {
+                    if self.haveNoDataView {
+                        self.noDataView?.removeFromSuperview()
+                    }
+                }
+                self.tableView.reloadData()
+            }else {
+                self.tableView.show(text: "😕读取收藏夹失败")
+            }
+        }
     }
     // MARK: - Table view data source
 
@@ -35,12 +58,12 @@ class UserFavoritesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return PlantStore.shared.userFavorites.count
+        return PlantStore.shared.userFavoritesCount
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "detail", for: indexPath)
-        cell.textLabel?.text = PlantStore.shared.userFavorites[indexPath.row]
+        cell.textLabel?.text = PlantStore.shared.userFavoritesPlantName(at:indexPath.row)
         return cell
     }
     

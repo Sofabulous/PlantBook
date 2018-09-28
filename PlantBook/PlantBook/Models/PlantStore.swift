@@ -22,26 +22,55 @@ class PlantStore {
     typealias PlantDataClosure = (PlantData?) -> Void
     
     // 用户喜爱植物
-    public var userFavorites:[String] = [] {
-        willSet {
-            if !isLoaded {
-                NetworkService.uploadUserFavorites(Favorites: newValue) { (e) in
-                    if let error = e {
-                        print("error is \(error.localizedDescription)")
-                    }
-                }
+    private var userFavorites:[String] = []
+    
+    var userFavoritesCount:Int {
+        return userFavorites.count
+    }
+    
+    func userFavoritesPlantName(at index:Int) -> String {
+        return userFavorites[index]
+    }
+    
+    func isFavoritePlant(name:String) -> Bool {
+        return userFavorites.contains(name)
+    }
+    
+    func addFavoritePlant(name:String,_ handler:((Error?) -> Void)?) {
+        NetworkService.addUserFavorites(favorite: name) { [weak self] (error) in
+            guard let `self` = self else {return}
+            if let _ = error {
+                handler?(error)
+            }else {
+                self.userFavorites.append(name)
             }
         }
+
     }
-    private var isLoaded = true
-    func getUserFavorites() {
+
+    func removeFavoritePlant(name:String,_ handler:((Error?) -> Void)?) {
+        NetworkService.removeUserFavorites(favorite: name) { [weak self] (error) in
+            guard let `self` = self else {return}
+            if let _ = error {
+                handler?(error)
+            }else {
+                guard let index = PlantStore.shared.userFavorites.firstIndex(of: name) else {return}
+                self.userFavorites.remove(at: index)            }
+        }
+    }
+
+    func getUserFavorites(_ resultClosure:((Bool)->Void)?) {
         if let _ = GSKeyChainDataManager.readUUID() {
             //TODO: 得到用户喜号植物
             NetworkService.getUserFavorites { [weak self] (favorites, error) in
+                guard let `self` = self else {return}
                 if let userFavorites = favorites {
-                    if self?.userFavorites != userFavorites {
-                        self?.userFavorites = userFavorites
+                    if self.userFavorites != userFavorites {
+                        self.userFavorites = userFavorites
                     }
+                    resultClosure?(true)
+                }else {
+                    resultClosure?(false)
                 }
             }
         }else {
@@ -55,7 +84,6 @@ class PlantStore {
                 }
             })
         }
-        self.isLoaded = false
     }
     
     func getPlantDataWith(type:PlantType, handler: @escaping ResultClosure) {

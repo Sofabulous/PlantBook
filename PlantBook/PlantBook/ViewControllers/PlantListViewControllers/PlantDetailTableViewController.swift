@@ -45,7 +45,7 @@ class PlantDetailTableViewController: UITableViewController {
             distributionLabel.text = data.description.distribution
             distributionLabel.preferredMaxLayoutWidth = distributionLabel.frame.size.width
             
-            if PlantStore.shared.userFavorites.contains(data.name) {
+            if PlantStore.shared.isFavoritePlant(name: data.name){
                 collectionButton.image = UIImage(named: "solid-heart")
             }else {
                 collectionButton.image = UIImage(named: "hollow-heart")
@@ -66,13 +66,22 @@ class PlantDetailTableViewController: UITableViewController {
         if collectionButton.image == UIImage(named: "solid-heart") {
             collectionButton.image = UIImage(named: "hollow-heart")
             if let name = plantData?.name {
-                guard let index = PlantStore.shared.userFavorites.firstIndex(of: name) else {return}
-                PlantStore.shared.userFavorites.remove(at: index)
+                PlantStore.shared.removeFavoritePlant(name: name) { [weak self] (error) in
+                    guard let `self` = self else {return}
+                    if let _ = error {
+                        self.view.show(text: "🤨取关失败，在试一试吧")
+                    }
+                }
             }
         }else {
             collectionButton.image = UIImage(named: "solid-heart")
             if let name = plantData?.name {
-                PlantStore.shared.userFavorites.append(name)
+                PlantStore.shared.addFavoritePlant(name: name) { [weak self] (error) in
+                    guard let `self` = self else {return}
+                    if let _ = error {
+                        self.view.show(text: "🤨关注失败，在试一试吧")
+                    }
+                }
             }
         }
     }

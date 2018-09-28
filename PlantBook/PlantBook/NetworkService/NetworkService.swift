@@ -14,11 +14,11 @@ class  NetworkService {
         UserTable.saveInBackground(resultBlock: handler)
     }
     
-    static public func uploadUserFavorites(Favorites:[String], handler: ((Error?) -> Void)? ) {
+    static public func addUserFavorites(favorite:String, handler: ((Error?) -> Void)? ) {
         getObjectByUUID { (array, error) in
             if let array = array {
                 if let userData = array.first as? BmobObject {
-                    userData.addUniqueObjects(from: Favorites, forKey: NetworkServiceKey.userFavorites)
+                    userData.addUniqueObjects(from: [favorite], forKey: NetworkServiceKey.userFavorites)
                     userData.updateInBackground(resultBlock: { (isSuccessful, error) in
                         if isSuccessful {
                             handler?(nil)
@@ -32,6 +32,26 @@ class  NetworkService {
             }
         }
     }
+    
+    static public func removeUserFavorites(favorite:String, handler: ((Error?) -> Void)? ) {
+        getObjectByUUID { (array, error) in
+            if let array = array {
+                if let userData = array.first as? BmobObject {
+                    userData.removeObjects(in: [favorite], forKey: NetworkServiceKey.userFavorites)
+                    userData.updateInBackground(resultBlock: { (isSuccessful, error) in
+                        if isSuccessful {
+                            handler?(nil)
+                        }else {
+                            handler?(error)
+                        }
+                    })
+                }
+            }else {
+                handler?(error)
+            }
+        }
+    }
+
     
     static public func getUserFavorites(handler: @escaping ([String]?,Error?) -> Void) {
         getObjectByUUID { (array, error) in
