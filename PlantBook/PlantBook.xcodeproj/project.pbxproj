@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1529E62DFB75D4137DF1BEF1 /* Pods_PlantBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A31FB9E31EF31C47B6A0D649 /* Pods_PlantBook.framework */; };
 		421D959621455DE00058CC1B /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 421D959521455DE00058CC1B /* Detail.storyboard */; };
 		4220A4B82155F54E0019F84B /* PlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4220A4B72155F54E0019F84B /* PlantTableViewCell.swift */; };
 		4220A4BA2155F64B0019F84B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4220A4B92155F64B0019F84B /* NetworkService.swift */; };
@@ -23,6 +22,7 @@
 		4296D9C8213D8DEC00EC05A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4296D9C7213D8DEC00EC05A8 /* Assets.xcassets */; };
 		4296D9CB213D8DEC00EC05A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4296D9C9213D8DEC00EC05A8 /* LaunchScreen.storyboard */; };
 		42A040DA2143E27000DDEBB4 /* PlantData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A040D92143E27000DDEBB4 /* PlantData.swift */; };
+		42ABBA87215DDA5000D6CF78 /* Pods_PlantBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42ABBA86215DDA5000D6CF78 /* Pods_PlantBook.framework */; };
 		42C47239215D2978008265BB /* UserFavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C47238215D2978008265BB /* UserFavoritesTableViewController.swift */; };
 		42C783C821418FDE00F76B24 /* PlantMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C783C721418FDE00F76B24 /* PlantMapViewController.swift */; };
 		42C783CF214192BE00F76B24 /* PlantSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C783CE214192BE00F76B24 /* PlantSelectViewController.swift */; };
@@ -55,6 +55,7 @@
 		4296D9CC213D8DEC00EC05A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42A040D92143E27000DDEBB4 /* PlantData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantData.swift; sourceTree = "<group>"; };
 		42A040DC214404EA00DDEBB4 /* PlantBook-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PlantBook-Bridging-Header.h"; sourceTree = "<group>"; };
+		42ABBA86215DDA5000D6CF78 /* Pods_PlantBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_PlantBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42C47238215D2978008265BB /* UserFavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFavoritesTableViewController.swift; sourceTree = "<group>"; };
 		42C783C721418FDE00F76B24 /* PlantMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantMapViewController.swift; sourceTree = "<group>"; };
 		42C783CE214192BE00F76B24 /* PlantSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantSelectViewController.swift; sourceTree = "<group>"; };
@@ -79,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1529E62DFB75D4137DF1BEF1 /* Pods_PlantBook.framework in Frameworks */,
+				42ABBA87215DDA5000D6CF78 /* Pods_PlantBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +90,7 @@
 		1652CA652F42E5ED6B53EFA8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				42ABBA86215DDA5000D6CF78 /* Pods_PlantBook.framework */,
 				A31FB9E31EF31C47B6A0D649 /* Pods_PlantBook.framework */,
 			);
 			name = Frameworks;
@@ -598,7 +600,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HLHREAEH5Q;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = plantBook/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -620,7 +624,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HLHREAEH5Q;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = plantBook/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
