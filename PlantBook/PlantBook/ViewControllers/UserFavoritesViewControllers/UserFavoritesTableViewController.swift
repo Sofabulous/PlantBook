@@ -14,7 +14,11 @@ class UserFavoritesTableViewController: UITableViewController {
         super.viewDidLoad()
         self.tableView.tableFooterView = UIView()
         self.navigationItem.title = "收藏夹"
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = true
+        } else {
+            // Fallback on earlier versions
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {

@@ -35,12 +35,16 @@ class RootPlantBookViewController: UIViewController {
     }
     
     func setMockNavigationBar() {
-        let color = UIColor(displayP3Red: 0.97, green: 0.97, blue: 0.97, alpha: 0.8)
+        let color = UIColor(red: 0.97, green: 0.97, blue: 0.97, alpha: 0.8)
         self.navigationController?.navigationBar.setBackgroundImage(UIImage.imageWithColor(color), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
         self.navigationItem.title = "植物图志"
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = true
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

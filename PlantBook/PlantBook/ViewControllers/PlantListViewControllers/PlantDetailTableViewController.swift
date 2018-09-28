@@ -50,7 +50,11 @@ class PlantDetailTableViewController: UITableViewController {
                 collectionButton.image = UIImage(named: "hollow-heart")
             }
         }
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = true
+        } else {
+            // Fallback on earlier versions
+        }
         self.tableView.separatorStyle = .none
         self.tableView.tableFooterView = UIView()
         tableView.estimatedRowHeight = tableView.rowHeight

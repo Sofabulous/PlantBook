@@ -33,7 +33,11 @@ class PlantMapViewController: UIViewController,BMKMapViewDelegate,BMKLocationMan
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // 地图不采用大标题样式
-        self.navigationController?.navigationBar.prefersLargeTitles = false
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = false
+        } else {
+            // Fallback on earlier versions
+        }
         mapView?.viewWillAppear()
         mapView?.delegate = self // 此处记得不用的时候需要置nil，否则影响内存的释放
         addLocationAnimatedAnnotations()
