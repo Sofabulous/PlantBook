@@ -11,7 +11,7 @@ import UIKit
 class PlantSelectViewController: UIViewController {
     var plantType: PlantType? {
         willSet {
-            if let type = newValue {
+            if let type = newValue,type != .angiosperms{
                 self.view.startLoading()
                 PlantStore.shared.getPlantDataWith(type: type, handler: { [weak self] (plantDatas, error) in
                     self?.view.endLoading()
@@ -19,12 +19,14 @@ class PlantSelectViewController: UIViewController {
                         self?.view.show(text: "植物被火星人带走了！")
                     }else {
                         if let plantDatas = plantDatas {
-                            self?.showPlantListTVC(plantDatas)
+                            self?.pushPlantListTVC(plantDatas)
                         }else {
                             self?.view.show(text: "🙁似乎遇到了一些小问题")
                         }
                     }
                 })
+            }else if newValue == .angiosperms {
+                pushFuzzySearchTVC()
             }
         }
     }
@@ -45,6 +47,7 @@ class PlantSelectViewController: UIViewController {
     
     @IBAction func clickAngiospermsButton(_ sender: Any) {
         plantType = .angiosperms
+        
     }
     
     
@@ -56,12 +59,22 @@ class PlantSelectViewController: UIViewController {
         plantType = PlantType.bamboo
     }
         
-    func showPlantListTVC (_ plantDatas: [PlantData]) {
+    func pushPlantListTVC (_ plantDatas: [PlantData]) {
         let MainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
         let plantListTVC = MainStoryboard.instantiateViewController(withIdentifier: "PlantListTableViewController") as? PlantListTableViewController
         if let VC = plantListTVC {
             VC.sourceData = plantDatas
             VC.navigationItem.title = plantType?.getCHSName()
+            self.navigationController?.pushViewController(VC, animated: true)
+        }
+    }
+    
+    func pushFuzzySearchTVC () {
+        let MainStoryboard = UIStoryboard.init(name: "FuzzySearch", bundle: nil)
+        let fuzzySearchTVC = MainStoryboard.instantiateInitialViewController() as? UITableViewController
+        if let VC = fuzzySearchTVC {
+            //暂时放在这里查看效果
+            self.navigationController?.setNavigationBarHidden(false, animated: true)
             self.navigationController?.pushViewController(VC, animated: true)
         }
     }
