@@ -112,7 +112,7 @@ class PlantStore {
         }
     }
     
-    // 根据地点找到关联的位置
+    // 根据地点找到关联的植物
     func getPlantDataWith(location:String, handler: @escaping ResultClosure) {
         NetworkService.searchPlantDataWith(location: location) { [weak self] (datas, error) in
             if let _ = error {
@@ -128,6 +128,24 @@ class PlantStore {
             }
         }
     }
+    
+    // 根据模糊查询的条件找到关联的植物
+    func getPlantDataWith(conditions:[String], type:PlantType , handler:@escaping ResultClosure) {
+        NetworkService.searchPlantDataWith(conditions: conditions, type: type) { [weak self] (datas, error) in
+            if let _ = error {
+                handler(nil,error)
+            }else {
+                if let plantDatas = datas as? [PlantData] {
+                    self?.plantDatas = plantDatas
+                    handler(plantDatas,nil)
+                }else {
+                    let dataError = PlantDataError.dataError
+                    handler(nil,dataError)
+                }
+            }
+        }
+    }
+
     
     var count:Int {
         return plantDatas.count
