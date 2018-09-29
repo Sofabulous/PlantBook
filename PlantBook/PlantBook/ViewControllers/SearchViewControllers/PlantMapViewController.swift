@@ -38,11 +38,11 @@ class PlantMapViewController: UIViewController,BMKMapViewDelegate,BMKLocationMan
         } else {
             // Fallback on earlier versions
         }
+        self.tabBarController?.tabBar.isHidden = false
         mapView?.viewWillAppear()
         mapView?.delegate = self // 此处记得不用的时候需要置nil，否则影响内存的释放
         addLocationAnimatedAnnotations()
         getUserLocation()
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {

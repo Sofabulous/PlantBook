@@ -32,6 +32,7 @@ class PlantDetailTableViewController: UITableViewController {
     }
     
     private func setUpUI() {
+        self.tabBarController?.tabBar.isHidden = true
         if let data = plantData {
             let placeholderImage = UIImage(named: "noPicture_big")
             plantImageView.kf.setImage(with: data.url, placeholder: placeholderImage, options: nil, progressBlock: nil, completionHandler: nil)

@@ -33,6 +33,7 @@ class PlantSelectViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     override func viewDidLoad() {
@@ -71,12 +72,13 @@ class PlantSelectViewController: UIViewController {
     
     func pushFuzzySearchTVC () {
         let MainStoryboard = UIStoryboard.init(name: "FuzzySearch", bundle: nil)
-        let fuzzySearchTVC = MainStoryboard.instantiateInitialViewController() as? UITableViewController
+        let fuzzySearchTVC = MainStoryboard.instantiateInitialViewController() as? FuzzySearchTableViewController
         if let VC = fuzzySearchTVC {
             //暂时放在这里查看效果
             self.navigationController?.setNavigationBarHidden(false, animated: true)
             self.navigationController?.pushViewController(VC, animated: true)
         }
+    
     }
     
     /*

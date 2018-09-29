@@ -30,6 +30,7 @@ class UserFavoritesTableViewController: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
         PlantStore.shared.getUserFavorites { [weak self] (isSuccessful) in
             guard let `self` = self else {return}
             if isSuccessful {

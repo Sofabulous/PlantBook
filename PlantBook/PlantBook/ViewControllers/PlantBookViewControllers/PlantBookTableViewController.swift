@@ -48,6 +48,10 @@ class PlantBookTableViewController: UITableViewController,UISearchBarDelegate {
         self.searchBarView?.addSubview(self.searchBar!)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         let text = searchText.transformTextToLatin()
         if text.isEmpty {
@@ -117,6 +121,7 @@ class PlantBookTableViewController: UITableViewController,UISearchBarDelegate {
             VC.plantData = plantData
             VC.navigationItem.title = plantName
             self.navigationController?.pushViewController(VC, animated: true)
+            self.navigationController?.viewControllers.first?.hidesBottomBarWhenPushed = false
         }
     }
     

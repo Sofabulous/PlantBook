@@ -34,6 +34,11 @@ class RootPlantBookViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     func setMockNavigationBar() {
         let color = UIColor(red: 0.97, green: 0.97, blue: 0.97, alpha: 0.8)
         self.navigationController?.navigationBar.setBackgroundImage(UIImage.imageWithColor(color), for: .default)
