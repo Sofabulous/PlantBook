@@ -91,8 +91,10 @@ static const NSInteger JYKToolBarHeight = 44;
 - (void)setupViews {
     //设置主视图
     self.backgroundColor = self.builder.isShowMask ? BACKGROUND_BLACK_COLOR : UIColor.clearColor;
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dissView)];
-    [self addGestureRecognizer:tap];
+    UITapGestureRecognizer *doubleTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dissView)];
+    doubleTapRecognizer.numberOfTapsRequired = 2;
+    doubleTapRecognizer.delaysTouchesBegan = YES;
+    [self addGestureRecognizer:doubleTapRecognizer];
     [self addSubview:self.containerView];
     //设置选择视图
     [self.containerView addSubview:self.pickerView];

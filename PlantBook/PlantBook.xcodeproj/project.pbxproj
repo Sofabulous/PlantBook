@@ -25,6 +25,7 @@
 		4296D9CB213D8DEC00EC05A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4296D9C9213D8DEC00EC05A8 /* LaunchScreen.storyboard */; };
 		42A040DA2143E27000DDEBB4 /* PlantData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A040D92143E27000DDEBB4 /* PlantData.swift */; };
 		42ABBA87215DDA5000D6CF78 /* Pods_PlantBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42ABBA86215DDA5000D6CF78 /* Pods_PlantBook.framework */; };
+		42BBFE48215F1EAA003DC97D /* FuzzySearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BBFE47215F1EAA003DC97D /* FuzzySearchTableViewController.swift */; };
 		42C47239215D2978008265BB /* UserFavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C47238215D2978008265BB /* UserFavoritesTableViewController.swift */; };
 		42C783C821418FDE00F76B24 /* PlantMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C783C721418FDE00F76B24 /* PlantMapViewController.swift */; };
 		42C783CF214192BE00F76B24 /* PlantSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C783CE214192BE00F76B24 /* PlantSelectViewController.swift */; };
@@ -61,6 +62,7 @@
 		42A040D92143E27000DDEBB4 /* PlantData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantData.swift; sourceTree = "<group>"; };
 		42A040DC214404EA00DDEBB4 /* PlantBook-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PlantBook-Bridging-Header.h"; sourceTree = "<group>"; };
 		42ABBA86215DDA5000D6CF78 /* Pods_PlantBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_PlantBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42BBFE47215F1EAA003DC97D /* FuzzySearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuzzySearchTableViewController.swift; sourceTree = "<group>"; };
 		42C47238215D2978008265BB /* UserFavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFavoritesTableViewController.swift; sourceTree = "<group>"; };
 		42C783C721418FDE00F76B24 /* PlantMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantMapViewController.swift; sourceTree = "<group>"; };
 		42C783CE214192BE00F76B24 /* PlantSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantSelectViewController.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				42C783CE214192BE00F76B24 /* PlantSelectViewController.swift */,
+				42BBFE47215F1EAA003DC97D /* FuzzySearchTableViewController.swift */,
 			);
 			path = FuzzySearchViewControllers;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				4220A4B82155F54E0019F84B /* PlantTableViewCell.swift in Sources */,
 				424C9D2E214E242F00ECBDA7 /* PlantStore.swift in Sources */,
 				42C783C821418FDE00F76B24 /* PlantMapViewController.swift in Sources */,
+				42BBFE48215F1EAA003DC97D /* FuzzySearchTableViewController.swift in Sources */,
 				42C783D62141940400F76B24 /* PlantListTableViewController.swift in Sources */,
 				42624404215CF57E0056BA96 /* SearchResultViewController.swift in Sources */,
 				42C783CF214192BE00F76B24 /* PlantSelectViewController.swift in Sources */,
