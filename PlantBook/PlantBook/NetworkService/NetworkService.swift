@@ -134,24 +134,37 @@ class  NetworkService {
         let query = BmobQuery(className: "Plant")
         
         query?.whereKey(NetworkServiceKey.PlantData.type, equalTo: type.rawValue)
-        query?.whereKey(NetworkServiceKey.PlantData.feature, containsAll: conditions)
         query?.findObjectsInBackground { (array, error) in
             if let array = array {
                 var plantDatas:[PlantData] = []
                 for object in array {
                     if let object = object as? BmobObject{
                         if let plantData = transformToPlantData(object: object) {
-                            
                             plantDatas.append(plantData)
                         }
                     }
                 }
+                plantDatas = matchPlantDatasWithConditions(conditions: conditions, plantDatas: plantDatas)
                 handler(plantDatas,error)
             }else {
                 handler(nil,error)
             }
         }
     }
+    
+    static private func matchPlantDatasWithConditions(conditions:[String], plantDatas:[PlantData]) -> [PlantData]{
+        return plantDatas.filter({ (data) -> Bool in
+            var isMatch = true
+            for condition in conditions {
+                if !data.description.desc.contains(condition) {
+                    isMatch = false
+                    break
+                }
+            }
+            return isMatch
+        })
+    }
+
     
     
     static private func transformToPlantData(object:BmobObject) -> PlantData? {
@@ -198,8 +211,6 @@ struct NetworkServiceKey {
         }
         /// model里没有的确定植物位置的字段
         static let location = "location"
-        /// model里没有的确定植物特征的字段
-        static let feature = "feature"
     }
 }
 

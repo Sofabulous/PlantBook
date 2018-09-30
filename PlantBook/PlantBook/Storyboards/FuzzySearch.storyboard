@@ -461,7 +461,8 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="被子植物模糊检索" id="bfQ-sm-LCt">
-                        <barButtonItem key="rightBarButtonItem" title="确定" id="194-Fv-GrE">
+                        <barButtonItem key="rightBarButtonItem" title="确定" image="fuzzySearch" id="194-Fv-GrE">
+                            <color key="tintColor" red="0.5450980392" green="0.76470588240000004" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="clickDoneButton:" destination="Z9l-3p-ej7" id="5Ju-2g-BQV"/>
                             </connections>
@@ -488,4 +489,7 @@
             <point key="canvasLocation" x="1380" y="178.56071964017991"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="fuzzySearch" width="28" height="28"/>
+    </resources>
 </document>

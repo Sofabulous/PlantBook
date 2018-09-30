@@ -48,8 +48,6 @@ class FuzzySearchTableViewController: UITableViewController,UITextFieldDelegate 
     
     var textFields:[UITextField] = []
     
-    var searchCondition:[String] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
@@ -123,12 +121,30 @@ class FuzzySearchTableViewController: UITableViewController,UITextFieldDelegate 
     
     
     @IBAction func clickDoneButton(_ sender: Any) {
+        var conditions:[String] = []
         for textField in self.textFields {
             if let text = textField.text, text != "全部" {
-                self.searchCondition.append(text)
+               conditions.append(text)
             }
         }
-        self.searchCondition.removeAll()
+        PlantStore.shared.getPlantDataWith(conditions: conditions, type: .angiosperms) { [weak self] (datas, error) in
+            guard let `self` = self else {return}
+            if let plantDatas = datas, plantDatas.count > 0{
+                self.pushPlantListTVC(plantDatas)
+            }else {
+                self.view.show(text: "🧐没有查到您要的植物，换个条件再试一试吧")
+            }
+        }
+    }
+    
+    func pushPlantListTVC (_ plantDatas: [PlantData]) {
+        let MainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let plantListTVC = MainStoryboard.instantiateViewController(withIdentifier: "PlantListTableViewController") as? PlantListTableViewController
+        if let VC = plantListTVC {
+            VC.sourceData = plantDatas
+            VC.navigationItem.title = "搜索结果"
+            self.navigationController?.pushViewController(VC, animated: true)
+        }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
