@@ -42,6 +42,7 @@ class PlantBookTableViewController: UITableViewController,UISearchBarDelegate {
         self.tableView.tableFooterView = UIView()
         self.tableView.estimatedSectionHeaderHeight = 0
         self.searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 44))
+        self.searchBar?.placeholder = "请输入植物名称"
         self.searchBar?.delegate = self
         resultArray = PlantStore.plantNames
         self.searchBar?.searchBarStyle = .minimal
