@@ -61,7 +61,7 @@ class PlantMapViewController: UIViewController,BMKMapViewDelegate,BMKLocationMan
         searchController.searchBar.sizeToFit()
         
         searchController.searchBar.delegate = self
-        searchController.searchBar.placeholder = "搜索"
+        searchController.searchBar.placeholder = "请输入植物名称"
         resultsController.searchBar = searchController.searchBar
         resultsController.rootNavigationController = self.navigationController
         
@@ -92,7 +92,7 @@ class PlantMapViewController: UIViewController,BMKMapViewDelegate,BMKLocationMan
     
     private func getUserLocation() {
         mapView?.showsUserLocation = false//先关闭显示的定位图层
-        mapView?.userTrackingMode = BMKUserTrackingModeNone;//设置定位的状态
+        mapView?.userTrackingMode = BMKUserTrackingModeFollowWithHeading;//设置定位的状态
         mapView?.showsUserLocation = true//显示定位图层
         locationManager.requestLocation(withReGeocode: true, withNetworkState: true) { [weak self] (location, networkState, error) in
             if let _ = error {
