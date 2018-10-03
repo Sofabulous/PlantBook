@@ -18,63 +18,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="Qtk-ho-5Mb">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="2at-Py-V1T">
-                                <rect key="frame" x="123.5" y="191.5" width="128" height="123.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Dng-VY-WYe">
+                                <rect key="frame" x="39" y="536" width="297.5" height="62"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flower" translatesAutoresizingMaskIntoConstraints="NO" id="TpC-bP-kN4">
-                                        <rect key="frame" x="31.5" y="0.0" width="65" height="69"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flower" translatesAutoresizingMaskIntoConstraints="NO" id="tDT-Zm-Vla">
+                                        <rect key="frame" x="0.0" y="0.0" width="64" height="62"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="西大植语" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EHC-JN-OkJ">
-                                        <rect key="frame" x="0.0" y="85" width="128" height="38.5"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="32"/>
-                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="highlightedColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="fFD-PF-XW4">
-                                <rect key="frame" x="0.0" y="577" width="375" height="74"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="西南大学校园景观植物分布地图" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C75-hX-9aL">
-                                        <rect key="frame" x="17.5" y="0.0" width="340.5" height="29"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="西南大学版权所有©" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Diw-D9-eaF">
-                                        <rect key="frame" x="80" y="45" width="215" height="29"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="fFD-PF-XW4">
+                                        <rect key="frame" x="69" y="0.0" width="228.5" height="62"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="西南大学校园景观植物分布地图" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C75-hX-9aL">
+                                                <rect key="frame" x="0.0" y="0.0" width="228.5" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="西南大学版权所有©" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Diw-D9-eaF">
+                                                <rect key="frame" x="42" y="42.5" width="144" height="19.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Qtk-ho-5Mb" firstAttribute="bottom" secondItem="nXi-9W-dFp" secondAttribute="bottom" id="2vj-bo-DAJ"/>
-                            <constraint firstItem="nXi-9W-dFp" firstAttribute="bottom" secondItem="fFD-PF-XW4" secondAttribute="bottom" constant="16" id="6mj-Wb-Mxp"/>
-                            <constraint firstItem="Qtk-ho-5Mb" firstAttribute="trailing" secondItem="nXi-9W-dFp" secondAttribute="trailing" id="71u-a4-Ct1"/>
-                            <constraint firstItem="Qtk-ho-5Mb" firstAttribute="leading" secondItem="nXi-9W-dFp" secondAttribute="leading" id="ATy-06-RcQ"/>
-                            <constraint firstItem="nXi-9W-dFp" firstAttribute="trailing" secondItem="fFD-PF-XW4" secondAttribute="trailing" id="UHm-wh-VVp"/>
-                            <constraint firstItem="fFD-PF-XW4" firstAttribute="leading" secondItem="nXi-9W-dFp" secondAttribute="leading" id="Xgm-il-5jk"/>
-                            <constraint firstItem="2at-Py-V1T" firstAttribute="bottom" secondItem="Qtk-ho-5Mb" secondAttribute="bottom" multiplier="0.382" constant="60" id="dgR-E4-avz"/>
-                            <constraint firstItem="Qtk-ho-5Mb" firstAttribute="top" secondItem="Qr9-YP-VGA" secondAttribute="top" id="eWE-C3-P8b"/>
-                            <constraint firstItem="2at-Py-V1T" firstAttribute="centerX" secondItem="Qr9-YP-VGA" secondAttribute="centerX" id="lNG-L1-vl9"/>
+                            <constraint firstItem="Dng-VY-WYe" firstAttribute="centerX" secondItem="Qr9-YP-VGA" secondAttribute="centerX" id="Aft-Pf-DPA"/>
+                            <constraint firstItem="Dng-VY-WYe" firstAttribute="centerY" secondItem="Qr9-YP-VGA" secondAttribute="bottom" multiplier="0.85" id="hMy-RC-pVR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nXi-9W-dFp"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RxB-tV-LP3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-678" y="-63"/>
+            <point key="canvasLocation" x="-679.20000000000005" y="-63.418290854572717"/>
         </scene>
     </scenes>
     <resources>
-        <image name="backgroundImage" width="4000" height="6000"/>
-        <image name="flower" width="65" height="69"/>
+        <image name="flower" width="64" height="62"/>
     </resources>
 </document>
