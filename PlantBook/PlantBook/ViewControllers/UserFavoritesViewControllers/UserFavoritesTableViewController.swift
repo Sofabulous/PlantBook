@@ -34,34 +34,51 @@ class UserFavoritesTableViewController: UITableViewController {
         PlantStore.shared.getUserFavorites { [weak self] (isSuccessful) in
             guard let `self` = self else {return}
             if isSuccessful {
-                if PlantStore.shared.userFavoritesCount == 0 {
-                    if let noDataView = self.noDataView {
-                        self.tableView.addSubview(noDataView)
-                        self.haveNoDataView = true
-                    }
-                }else {
-                    if self.haveNoDataView {
-                        self.noDataView?.removeFromSuperview()
-                    }
-                }
+                self.addNoDataView()
                 self.tableView.reloadData()
             }else {
                 self.tableView.show(text: "😕读取收藏夹失败")
             }
         }
     }
-    // MARK: - Table view data source
+    
+    func addNoDataView() {
+        if PlantStore.shared.userFavoritesCount == 0 {
+            if let noDataView = self.noDataView {
+                self.tableView.addSubview(noDataView)
+                self.haveNoDataView = true
+            }
+        }else {
+            if self.haveNoDataView {
+                self.noDataView?.removeFromSuperview()
+            }
+        }
+    }
+    
+    private func pushDetailTVC(plantName: String, plantData: PlantData) {
+        let DatailStoryboard = UIStoryboard.init(name: "Detail", bundle: nil)
+        let plantDetailTVC = DatailStoryboard.instantiateInitialViewController() as? PlantDetailTableViewController
+        if let VC = plantDetailTVC {
+            VC.plantData = plantData
+            VC.navigationItem.title = plantName
+            self.navigationController?.pushViewController(VC, animated: true)
+        }
+    }
+    
+}
 
+extension UserFavoritesTableViewController {
+    //MARK: - UITableViewDataSource
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return PlantStore.shared.userFavoritesCount
     }
-
+    
+    
+    //MARK: -  UITableViewDelegate
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "detail", for: indexPath)
         cell.textLabel?.text = PlantStore.shared.userFavoritesPlantName(at:indexPath.row)
@@ -82,14 +99,26 @@ class UserFavoritesTableViewController: UITableViewController {
         }
     }
     
-    private func pushDetailTVC(plantName: String, plantData: PlantData) {
-        let DatailStoryboard = UIStoryboard.init(name: "Detail", bundle: nil)
-        let plantDetailTVC = DatailStoryboard.instantiateInitialViewController() as? PlantDetailTableViewController
-        if let VC = plantDetailTVC {
-            VC.plantData = plantData
-            VC.navigationItem.title = plantName
-            self.navigationController?.pushViewController(VC, animated: true)
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let cell = tableView.cellForRow(at: indexPath)
+            if let name = cell?.textLabel?.text {
+                PlantStore.shared.removeFavoritePlant(name: name) {[weak self] error in
+                    guard let `self` = self else {return}
+                    if let _ = error {
+                        self.tableView.show(text: "🤨取关失败，在试一试吧")
+                    }else {
+                        self.tableView.deleteRows(at: [indexPath], with: .fade)
+                        if PlantStore.shared.userFavoritesCount == 0 {
+                           self.addNoDataView()
+                        }
+                    }
+                }
+            }
         }
     }
     
+    override func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "取关"
+    }
 }
