@@ -74,7 +74,6 @@ class PlantSelectViewController: UIViewController {
         let MainStoryboard = UIStoryboard.init(name: "FuzzySearch", bundle: nil)
         let fuzzySearchTVC = MainStoryboard.instantiateInitialViewController() as? FuzzySearchTableViewController
         if let VC = fuzzySearchTVC {
-            //暂时放在这里查看效果
             self.navigationController?.setNavigationBarHidden(false, animated: true)
             self.navigationController?.pushViewController(VC, animated: true)
         }

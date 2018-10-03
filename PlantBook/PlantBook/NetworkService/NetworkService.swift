@@ -227,7 +227,7 @@ enum PlantType:String {
         case .gymnosperms:
             return "裸子植物"
         case .bamboo:
-            return "竹子"
+            return "竹类"
         case .fern:
             return "蕨类植物"
         }
