@@ -168,15 +168,15 @@ class  NetworkService {
     
     
     static private func transformToPlantData(object:BmobObject) -> PlantData? {
-        let urlStr = object.object(forKey: NetworkServiceKey.PlantData.url) as! String
+        let urlStr = object.object(forKey: NetworkServiceKey.PlantData.url) as? String ?? ""
         let url = URL(string: urlStr)
-        let name = object.object(forKey: NetworkServiceKey.PlantData.name) as! String
-        let name_en = object.object(forKey: NetworkServiceKey.PlantData.name_en) as! String
-        let taxonomy = object.object(forKey: NetworkServiceKey.PlantData.taxonomy) as! String
+        let name = object.object(forKey: NetworkServiceKey.PlantData.name) as? String ?? ""
+        let name_en = object.object(forKey: NetworkServiceKey.PlantData.name_en) as? String ?? ""
+        let taxonomy = object.object(forKey: NetworkServiceKey.PlantData.taxonomy) as? String ?? ""
         // description
-        let desc = object.object(forKey: NetworkServiceKey.PlantData.PlantDescription.desc) as! String
-        let usage = object.object(forKey: NetworkServiceKey.PlantData.PlantDescription.usage) as! String
-        let distribution = object.object(forKey: NetworkServiceKey.PlantData.PlantDescription.distribution) as! String
+        let desc = object.object(forKey: NetworkServiceKey.PlantData.PlantDescription.desc) as? String ?? ""
+        let usage = object.object(forKey: NetworkServiceKey.PlantData.PlantDescription.usage) as? String ?? ""
+        let distribution = object.object(forKey: NetworkServiceKey.PlantData.PlantDescription.distribution) as? String ?? ""
         let description = PlantData.PlantDescription.init(desc: desc, usage: usage, distribution: distribution)
         let plantData = PlantData.init(url: url, name: name, name_en: name_en, taxonomy: taxonomy, description: description)
         return plantData
