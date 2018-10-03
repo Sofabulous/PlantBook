@@ -47,7 +47,7 @@ class PlantStore {
         }
 
     }
-
+    
     func removeFavoritePlant(name:String,_ handler:((Error?) -> Void)?) {
         NetworkService.removeUserFavorites(favorite: name) { [weak self] (error) in
             guard let `self` = self else {return}
@@ -55,7 +55,9 @@ class PlantStore {
                 handler?(error)
             }else {
                 guard let index = PlantStore.shared.userFavorites.firstIndex(of: name) else {return}
-                self.userFavorites.remove(at: index)            }
+                self.userFavorites.remove(at: index)
+                handler?(nil)
+            }
         }
     }
 
@@ -157,7 +159,7 @@ class PlantStore {
     }
     // 优化显示速度，本地保存这个植物数组
     //MARK: - 植物名称数组，以及方便首字母排序的相关操作
-    static let CHSPlantNames = ["侧柏","慈竹","凤尾竹","桂竹","海金沙","柳杉","罗汉松","毛蕨","南方红豆杉","铺地柏","肾蕨","水杉","四川苏铁","苏铁","塔柏","铁线蕨","蜈蚣草","小琴丝竹","孝顺竹","雪松","异叶南洋杉","银杏","紫竹"]
+    static let CHSPlantNames = ["矮棕竹","侧柏","慈竹","凤尾竹","桂竹","海金沙","柳杉","罗汉松","毛蕨","南方红豆杉","铺地柏","肾蕨","水杉","四川苏铁","苏铁","塔柏","铁线蕨","蜈蚣草","小琴丝竹","孝顺竹","雪松","异叶南洋杉","银杏","紫竹"]
     
     static let latinPlantNames = CHSPlantNames.map { $0.transformTextToLatin() }
     
