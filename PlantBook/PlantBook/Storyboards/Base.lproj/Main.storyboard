@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.9"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,13 +19,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="M33-dO-Z48">
-                                <rect key="frame" x="67" y="181.66666666666666" width="280" height="372.66666666666674"/>
+                                <rect key="frame" x="67" y="180.33333333333334" width="280" height="375.33333333333326"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="bIO-1d-a7m">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="166.33333333333334"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="167.66666666666666"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="L9c-X7-B1L">
-                                                <rect key="frame" x="0.0" y="0.0" width="120" height="166.33333333333334"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="167.66666666666666"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cir-zG-k7T">
                                                         <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
@@ -38,15 +39,15 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="被子植物" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGv-Vv-JvR">
-                                                        <rect key="frame" x="0.0" y="146.00000000000003" width="120" height="20.333333333333343"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <rect key="frame" x="0.0" y="145.99999999999997" width="120" height="21.666666666666657"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="4uU-4l-7fi">
-                                                <rect key="frame" x="160" y="0.0" width="120" height="166.33333333333334"/>
+                                                <rect key="frame" x="160" y="0.0" width="120" height="167.66666666666666"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oCK-Wq-zPa">
                                                         <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
@@ -60,8 +61,8 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="裸子植物" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWb-Cx-sGn">
-                                                        <rect key="frame" x="0.0" y="146.00000000000003" width="120" height="20.333333333333343"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <rect key="frame" x="0.0" y="145.99999999999997" width="120" height="21.666666666666657"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -70,10 +71,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="qcF-uA-T33">
-                                        <rect key="frame" x="0.0" y="206.33333333333331" width="280" height="166.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="207.66666666666669" width="280" height="167.66666666666669"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="g2g-py-61Z">
-                                                <rect key="frame" x="0.0" y="0.0" width="120" height="166.33333333333334"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="167.66666666666666"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RSQ-nK-9Vj">
                                                         <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
@@ -86,16 +87,16 @@
                                                             <action selector="clickBambooButton:" destination="bOA-CN-5vs" eventType="touchUpInside" id="G8G-av-5pV"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="竹子" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHR-8l-Zqs">
-                                                        <rect key="frame" x="0.0" y="146" width="120" height="20.333333333333343"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="竹类" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r65-Sf-w9p">
+                                                        <rect key="frame" x="0.0" y="146" width="120" height="21.666666666666657"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="juZ-Bk-aCi">
-                                                <rect key="frame" x="160" y="0.0" width="120" height="166.33333333333334"/>
+                                                <rect key="frame" x="160" y="0.0" width="120" height="167.66666666666666"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJ5-OU-trd">
                                                         <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
@@ -109,8 +110,8 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="蕨类植物" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Yh-yT-Ijj">
-                                                        <rect key="frame" x="0.0" y="146" width="120" height="20.333333333333343"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <rect key="frame" x="0.0" y="146" width="120" height="21.666666666666657"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -388,7 +389,6 @@
         <!--User Favorites Table View Controller-->
         <scene sceneID="2Aq-J6-i8c">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OqK-cX-Hrz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="dAd-zY-ytt" customClass="UserFavoritesTableViewController" customModule="PlantBook" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Vsf-sp-YDu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
@@ -420,6 +420,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="4G9-Sg-pk2"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OqK-cX-Hrz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1671" y="841"/>
         </scene>
