@@ -142,10 +142,42 @@
                     <view key="view" contentMode="scaleToFill" id="WK4-lD-rjG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="04R-yd-Qwy">
+                                <rect key="frame" x="0.0" y="64" width="414" height="613"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgx-s7-TZn">
+                                        <rect key="frame" x="366" y="573" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="5GQ-PN-yak"/>
+                                            <constraint firstAttribute="height" constant="40" id="F1X-hZ-53l"/>
+                                        </constraints>
+                                        <state key="normal" image="location"/>
+                                        <connections>
+                                            <action selector="clickLocationButton:" destination="wW2-TY-epP" eventType="touchUpInside" id="AJ0-Bs-UdO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="pgx-s7-TZn" secondAttribute="bottom" id="B99-h5-c9l"/>
+                                    <constraint firstAttribute="trailing" secondItem="pgx-s7-TZn" secondAttribute="trailing" constant="8" id="lgx-tW-x2U"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zik-bF-ud6" firstAttribute="trailing" secondItem="04R-yd-Qwy" secondAttribute="trailing" id="3hn-Fk-DUQ"/>
+                            <constraint firstItem="04R-yd-Qwy" firstAttribute="leading" secondItem="zik-bF-ud6" secondAttribute="leading" id="Lni-1Y-9fc"/>
+                            <constraint firstItem="zik-bF-ud6" firstAttribute="bottom" secondItem="04R-yd-Qwy" secondAttribute="bottom" constant="10" id="Qlz-xo-W3J"/>
+                            <constraint firstItem="04R-yd-Qwy" firstAttribute="top" secondItem="zik-bF-ud6" secondAttribute="top" id="aHN-2A-ief"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="zik-bF-ud6"/>
                     </view>
                     <navigationItem key="navigationItem" id="rMb-dY-vqi"/>
+                    <connections>
+                        <outlet property="contentView" destination="04R-yd-Qwy" id="YJe-r5-P7e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fXh-KQ-km9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -460,6 +492,7 @@
         <image name="favorites" width="22" height="26"/>
         <image name="ferns" width="112" height="120"/>
         <image name="gymnosperms" width="112" height="120"/>
+        <image name="location" width="38" height="38"/>
         <image name="map" width="24" height="22"/>
         <image name="plant" width="28" height="28"/>
         <image name="search" width="25" height="24"/>

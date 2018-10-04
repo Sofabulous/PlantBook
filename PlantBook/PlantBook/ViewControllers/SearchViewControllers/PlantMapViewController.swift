@@ -16,6 +16,8 @@ class PlantMapViewController: UIViewController,BMKMapViewDelegate,BMKLocationMan
     var locationManager: BMKLocationManager!
     var userLocation: BMKUserLocation!
     
+    @IBOutlet weak var contentView: UIView!
+    
     var mapView: BMKMapView?
     var animatedAnnotation: BMKPointAnnotation?
     var animatedAnnotations: [BMKPointAnnotation] = []
@@ -23,10 +25,11 @@ class PlantMapViewController: UIViewController,BMKMapViewDelegate,BMKLocationMan
     override func viewDidLoad() {
         super.viewDidLoad()
         PlantStore.shared.getUserFavorites(nil)
-        mapView = BMKMapView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
-        self.view.addSubview(mapView!)
+        // 初始化地图
+        setUpMapView()
         // 初始化定位服务
         setUpLocation()
+        // 添加搜索框，会使得整个navigationBar大10个point
         addSearchController()
     }
     
@@ -50,7 +53,17 @@ class PlantMapViewController: UIViewController,BMKMapViewDelegate,BMKLocationMan
         mapView?.viewWillDisappear()
         mapView?.delegate = nil // 不用时，置nil
     }
-    //MARK:- SearchController method
+    
+    // MARK:- 设置BMKMapView
+    private func setUpMapView() {
+        mapView = BMKMapView(frame: CGRect(x: 0, y: 0, width: self.contentView.frame.width, height: self.contentView.frame.height))
+        mapView?.zoomLevel = 20
+        self.contentView.addSubview(mapView!)
+        self.contentView.sendSubviewToBack(mapView!)
+    }
+    
+    
+    // MARK:- SearchController method
     private func addSearchController() {
         let resultsController = SearchResultViewController()
         let searchController = UISearchController(searchResultsController: resultsController)
@@ -96,7 +109,7 @@ class PlantMapViewController: UIViewController,BMKMapViewDelegate,BMKLocationMan
         mapView?.showsUserLocation = true//显示定位图层
         locationManager.requestLocation(withReGeocode: true, withNetworkState: true) { [weak self] (location, networkState, error) in
             if let _ = error {
-                self?.view.show(text: "🤔获取定位出现了一些小意外")
+                self?.contentView.show(text: "🤔获取定位出现了一些小意外")
                 return
             }
             if let myLocation = location {
@@ -104,6 +117,11 @@ class PlantMapViewController: UIViewController,BMKMapViewDelegate,BMKLocationMan
                 self?.mapView?.updateLocationData(self?.userLocation)
             }
         }
+    }
+    
+    
+    @IBAction func clickLocationButton(_ sender: Any) {
+        getUserLocation()
     }
     
     //MARK:- locationAnimatedAnnotations method
@@ -118,7 +136,8 @@ class PlantMapViewController: UIViewController,BMKMapViewDelegate,BMKLocationMan
         animatedAnnotation = BMKPointAnnotation()
         let location = PlantStore.plantLocations[number - 1]
         animatedAnnotation?.coordinate = CLLocationCoordinate2DMake(location.latitude, location.longitude)
-        animatedAnnotation?.title = "\(number)号点"
+        animatedAnnotation?.title = "查询"
+        animatedAnnotation?.subtitle = "\(number)号点"
         mapView?.addAnnotation(animatedAnnotation)
     }
     
@@ -126,12 +145,12 @@ class PlantMapViewController: UIViewController,BMKMapViewDelegate,BMKLocationMan
     func mapView(_ mapView: BMKMapView!, viewFor annotation: BMKAnnotation!) -> BMKAnnotationView! {
         // 动画标注
         if let point = annotation as? BMKPointAnnotation {
-            let AnnotationViewID = point.title
+            let AnnotationViewID = point.subtitle
             let annotationView = AnimatedAnnotationView(annotation: annotation, reuseIdentifier: AnnotationViewID)
             let image = UIImage(named: "point.png")
             let images = [image!]
             annotationView.setImages(images)
-            guard let characterTag = point.title.first else {return nil} 
+            guard let characterTag = point.subtitle.first else {return nil}
             let stringTag = String.init(characterTag)
             if let tag = Int.init(stringTag) {
                 annotationView.tag = tag
