@@ -78,7 +78,7 @@ class FuzzySearchTableViewController: UITableViewController,UITextFieldDelegate 
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        var choices = ["全部"]
+        var choices = ["均不符合"]
         switch textField {
         case habitTextField:
             choices.append(contentsOf: ["草本","灌木","藤本","乔木"])
@@ -123,7 +123,7 @@ class FuzzySearchTableViewController: UITableViewController,UITextFieldDelegate 
     @IBAction func clickDoneButton(_ sender: Any) {
         var conditions:[String] = []
         for textField in self.textFields {
-            if let text = textField.text, text != "全部" {
+            if let text = textField.text, text != "未指定", text != "均不符合" {
                conditions.append(text)
             }
         }
