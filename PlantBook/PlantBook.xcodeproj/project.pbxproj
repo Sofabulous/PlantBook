@@ -15,7 +15,6 @@
 		423F84D9215E7937004CF08E /* FuzzySearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 423F84D8215E7937004CF08E /* FuzzySearch.storyboard */; };
 		423F84DD215E7C5E004CF08E /* JYKPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 423F84DB215E7C5E004CF08E /* JYKPicker.m */; };
 		424C9D2E214E242F00ECBDA7 /* PlantStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424C9D2D214E242F00ECBDA7 /* PlantStore.swift */; };
-		424C9D30214E279200ECBDA7 /* AllPlants in Resources */ = {isa = PBXBuildFile; fileRef = 424C9D2F214E279200ECBDA7 /* AllPlants */; };
 		4257870C214546C30006E90B /* AnimatedAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4257870B214546C30006E90B /* AnimatedAnnotationView.swift */; };
 		42624404215CF57E0056BA96 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42624403215CF57E0056BA96 /* SearchResultViewController.swift */; };
 		4277A5EF215B6AF400D204F0 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4277A5EE215B6AF400D204F0 /* UIView.swift */; };
@@ -24,6 +23,7 @@
 		4296D9C8213D8DEC00EC05A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4296D9C7213D8DEC00EC05A8 /* Assets.xcassets */; };
 		4296D9CB213D8DEC00EC05A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4296D9C9213D8DEC00EC05A8 /* LaunchScreen.storyboard */; };
 		42A040DA2143E27000DDEBB4 /* PlantData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A040D92143E27000DDEBB4 /* PlantData.swift */; };
+		42A422082167E35300F54C1F /* PlantLocations.json in Resources */ = {isa = PBXBuildFile; fileRef = 42A422072167E35300F54C1F /* PlantLocations.json */; };
 		42ABBA87215DDA5000D6CF78 /* Pods_PlantBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42ABBA86215DDA5000D6CF78 /* Pods_PlantBook.framework */; };
 		42BBFE48215F1EAA003DC97D /* FuzzySearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BBFE47215F1EAA003DC97D /* FuzzySearchTableViewController.swift */; };
 		42C47239215D2978008265BB /* UserFavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C47238215D2978008265BB /* UserFavoritesTableViewController.swift */; };
@@ -32,6 +32,22 @@
 		42C783D32141933100F76B24 /* PlantBookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C783D22141933100F76B24 /* PlantBookTableViewController.swift */; };
 		42C783D62141940400F76B24 /* PlantListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C783D52141940400F76B24 /* PlantListTableViewController.swift */; };
 		42C783D82141943200F76B24 /* PlantDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C783D72141943200F76B24 /* PlantDetailTableViewController.swift */; };
+		42DC569B2169AE5D00514AB2 /* DispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC569A2169AE5D00514AB2 /* DispatchQueue.swift */; };
+		42DC569D2169B53000514AB2 /* PlantNames.txt in Resources */ = {isa = PBXBuildFile; fileRef = 42DC569C2169B53000514AB2 /* PlantNames.txt */; };
+		42DC56D2216A43EE00514AB2 /* FuzzySearchHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC56D1216A43EE00514AB2 /* FuzzySearchHelpViewController.swift */; };
+		42DC56D6216A530B00514AB2 /* help.html in Resources */ = {isa = PBXBuildFile; fileRef = 42DC56D5216A530B00514AB2 /* help.html */; };
+		42DC56E2216A531500514AB2 /* crack.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 42DC56D7216A531500514AB2 /* crack.tiff */; };
+		42DC56E3216A531500514AB2 /* leafGrowth.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 42DC56D8216A531500514AB2 /* leafGrowth.tiff */; };
+		42DC56E4216A531500514AB2 /* leafAppearance.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 42DC56D9216A531500514AB2 /* leafAppearance.tiff */; };
+		42DC56E5216A531500514AB2 /* leafMargin.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 42DC56DA216A531500514AB2 /* leafMargin.tiff */; };
+		42DC56E6216A531500514AB2 /* arallelParallelVenation.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 42DC56DB216A531500514AB2 /* arallelParallelVenation.tiff */; };
+		42DC56E7216A531500514AB2 /* leaf.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 42DC56DC216A531500514AB2 /* leaf.tiff */; };
+		42DC56E8216A531500514AB2 /* inflorescence.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 42DC56DD216A531500514AB2 /* inflorescence.tiff */; };
+		42DC56E9216A531500514AB2 /* fruit.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 42DC56DE216A531500514AB2 /* fruit.tiff */; };
+		42DC56EA216A531500514AB2 /* parallelVeins.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 42DC56DF216A531500514AB2 /* parallelVeins.tiff */; };
+		42DC56EB216A531500514AB2 /* palmateVein.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 42DC56E0216A531500514AB2 /* palmateVein.tiff */; };
+		42DC56EC216A531500514AB2 /* nettedVenation.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 42DC56E1216A531500514AB2 /* nettedVenation.tiff */; };
+		42DC56EE216A532600514AB2 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 42DC56ED216A532600514AB2 /* style.css */; };
 		42DEC62A215D189B005673FA /* GSKeyChainDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DEC627215D189A005673FA /* GSKeyChainDataManager.m */; };
 		42DEC62B215D189B005673FA /* GSKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DEC629215D189A005673FA /* GSKeyChain.m */; };
 		42E2A15121539F42009FCC27 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E2A15021539F42009FCC27 /* String.swift */; };
@@ -49,7 +65,6 @@
 		423F84DB215E7C5E004CF08E /* JYKPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYKPicker.m; sourceTree = "<group>"; };
 		423F84DC215E7C5E004CF08E /* JYKPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYKPicker.h; sourceTree = "<group>"; };
 		424C9D2D214E242F00ECBDA7 /* PlantStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantStore.swift; sourceTree = "<group>"; };
-		424C9D2F214E279200ECBDA7 /* AllPlants */ = {isa = PBXFileReference; lastKnownFileType = text; path = AllPlants; sourceTree = "<group>"; };
 		4257870B214546C30006E90B /* AnimatedAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedAnnotationView.swift; sourceTree = "<group>"; };
 		42624403215CF57E0056BA96 /* SearchResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		4277A5EE215B6AF400D204F0 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -61,6 +76,7 @@
 		4296D9CC213D8DEC00EC05A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42A040D92143E27000DDEBB4 /* PlantData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantData.swift; sourceTree = "<group>"; };
 		42A040DC214404EA00DDEBB4 /* PlantBook-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PlantBook-Bridging-Header.h"; sourceTree = "<group>"; };
+		42A422072167E35300F54C1F /* PlantLocations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PlantLocations.json; sourceTree = "<group>"; };
 		42ABBA86215DDA5000D6CF78 /* Pods_PlantBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_PlantBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42BBFE47215F1EAA003DC97D /* FuzzySearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuzzySearchTableViewController.swift; sourceTree = "<group>"; };
 		42C47238215D2978008265BB /* UserFavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFavoritesTableViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +87,22 @@
 		42C783D72141943200F76B24 /* PlantDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailTableViewController.swift; sourceTree = "<group>"; };
 		42CAC656215CBEEF002B9C7F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		42CAC657215CBEEF002B9C7F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		42DC569A2169AE5D00514AB2 /* DispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueue.swift; sourceTree = "<group>"; };
+		42DC569C2169B53000514AB2 /* PlantNames.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = PlantNames.txt; sourceTree = "<group>"; };
+		42DC56D1216A43EE00514AB2 /* FuzzySearchHelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuzzySearchHelpViewController.swift; sourceTree = "<group>"; };
+		42DC56D5216A530B00514AB2 /* help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = help.html; sourceTree = "<group>"; };
+		42DC56D7216A531500514AB2 /* crack.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = crack.tiff; sourceTree = "<group>"; };
+		42DC56D8216A531500514AB2 /* leafGrowth.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = leafGrowth.tiff; sourceTree = "<group>"; };
+		42DC56D9216A531500514AB2 /* leafAppearance.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = leafAppearance.tiff; sourceTree = "<group>"; };
+		42DC56DA216A531500514AB2 /* leafMargin.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = leafMargin.tiff; sourceTree = "<group>"; };
+		42DC56DB216A531500514AB2 /* arallelParallelVenation.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arallelParallelVenation.tiff; sourceTree = "<group>"; };
+		42DC56DC216A531500514AB2 /* leaf.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = leaf.tiff; sourceTree = "<group>"; };
+		42DC56DD216A531500514AB2 /* inflorescence.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = inflorescence.tiff; sourceTree = "<group>"; };
+		42DC56DE216A531500514AB2 /* fruit.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = fruit.tiff; sourceTree = "<group>"; };
+		42DC56DF216A531500514AB2 /* parallelVeins.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = parallelVeins.tiff; sourceTree = "<group>"; };
+		42DC56E0216A531500514AB2 /* palmateVein.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = palmateVein.tiff; sourceTree = "<group>"; };
+		42DC56E1216A531500514AB2 /* nettedVenation.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = nettedVenation.tiff; sourceTree = "<group>"; };
+		42DC56ED216A532600514AB2 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
 		42DEC626215D189A005673FA /* GSKeyChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSKeyChain.h; sourceTree = "<group>"; };
 		42DEC627215D189A005673FA /* GSKeyChainDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSKeyChainDataManager.m; sourceTree = "<group>"; };
 		42DEC628215D189A005673FA /* GSKeyChainDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSKeyChainDataManager.h; sourceTree = "<group>"; };
@@ -122,14 +154,14 @@
 			path = TableViewCells;
 			sourceTree = "<group>";
 		};
-		4220A4BB2156353A0019F84B /* Utils */ = {
+		4220A4BB2156353A0019F84B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				423F84DA215E7C3E004CF08E /* JYKPicker */,
 				42DEC625215D1870005673FA /* KeyChain */,
 				4220A4BC215635760019F84B /* MBProgressHUD */,
 			);
-			path = Utils;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		4220A4BC215635760019F84B /* MBProgressHUD */ = {
@@ -187,9 +219,11 @@
 		4296D9BF213D8DEA00EC05A8 /* PlantBook */ = {
 			isa = PBXGroup;
 			children = (
+				42DC569E2169FEB000514AB2 /* HelpHTML */,
+				42A422002167A35F00F54C1F /* Resource */,
 				423F84D7215E331A004CF08E /* Xibs */,
 				42FCF7DF215DFD83007F7A34 /* Delegates */,
-				4220A4BB2156353A0019F84B /* Utils */,
+				4220A4BB2156353A0019F84B /* Utilities */,
 				42E2A14F21539E92009FCC27 /* Extensions */,
 				421FEFA621455C060078A8AA /* Storyboards */,
 				42A040DB214404B600DDEBB4 /* Bridging-Header */,
@@ -231,6 +265,15 @@
 			path = "Bridging-Header";
 			sourceTree = "<group>";
 		};
+		42A422002167A35F00F54C1F /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				42A422072167E35300F54C1F /* PlantLocations.json */,
+				42DC569C2169B53000514AB2 /* PlantNames.txt */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		42C47237215D28D6008265BB /* UserFavoritesViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +297,7 @@
 			children = (
 				42C783CE214192BE00F76B24 /* PlantSelectViewController.swift */,
 				42BBFE47215F1EAA003DC97D /* FuzzySearchTableViewController.swift */,
+				42DC56D1216A43EE00514AB2 /* FuzzySearchHelpViewController.swift */,
 			);
 			path = FuzzySearchViewControllers;
 			sourceTree = "<group>";
@@ -282,7 +326,6 @@
 			children = (
 				42A040D92143E27000DDEBB4 /* PlantData.swift */,
 				424C9D2D214E242F00ECBDA7 /* PlantStore.swift */,
-				424C9D2F214E279200ECBDA7 /* AllPlants */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -292,6 +335,42 @@
 			children = (
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		42DC569E2169FEB000514AB2 /* HelpHTML */ = {
+			isa = PBXGroup;
+			children = (
+				42DC56D5216A530B00514AB2 /* help.html */,
+				42DC56A1216A068B00514AB2 /* imgs */,
+				42DC56A0216A068500514AB2 /* css */,
+			);
+			path = HelpHTML;
+			sourceTree = "<group>";
+		};
+		42DC56A0216A068500514AB2 /* css */ = {
+			isa = PBXGroup;
+			children = (
+				42DC56ED216A532600514AB2 /* style.css */,
+			);
+			path = css;
+			sourceTree = "<group>";
+		};
+		42DC56A1216A068B00514AB2 /* imgs */ = {
+			isa = PBXGroup;
+			children = (
+				42DC56DB216A531500514AB2 /* arallelParallelVenation.tiff */,
+				42DC56D7216A531500514AB2 /* crack.tiff */,
+				42DC56DE216A531500514AB2 /* fruit.tiff */,
+				42DC56DD216A531500514AB2 /* inflorescence.tiff */,
+				42DC56DC216A531500514AB2 /* leaf.tiff */,
+				42DC56D9216A531500514AB2 /* leafAppearance.tiff */,
+				42DC56D8216A531500514AB2 /* leafGrowth.tiff */,
+				42DC56DA216A531500514AB2 /* leafMargin.tiff */,
+				42DC56E1216A531500514AB2 /* nettedVenation.tiff */,
+				42DC56E0216A531500514AB2 /* palmateVein.tiff */,
+				42DC56DF216A531500514AB2 /* parallelVeins.tiff */,
+			);
+			path = imgs;
 			sourceTree = "<group>";
 		};
 		42DEC625215D1870005673FA /* KeyChain */ = {
@@ -310,6 +389,7 @@
 			children = (
 				42E2A15021539F42009FCC27 /* String.swift */,
 				4277A5EE215B6AF400D204F0 /* UIView.swift */,
+				42DC569A2169AE5D00514AB2 /* DispatchQueue.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -392,13 +472,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				424C9D30214E279200ECBDA7 /* AllPlants in Resources */,
+				42DC56E5216A531500514AB2 /* leafMargin.tiff in Resources */,
 				4296D9CB213D8DEC00EC05A8 /* LaunchScreen.storyboard in Resources */,
+				42DC56E2216A531500514AB2 /* crack.tiff in Resources */,
+				42DC56D6216A530B00514AB2 /* help.html in Resources */,
+				42A422082167E35300F54C1F /* PlantLocations.json in Resources */,
+				42DC56E9216A531500514AB2 /* fruit.tiff in Resources */,
+				42DC56E7216A531500514AB2 /* leaf.tiff in Resources */,
+				42DC56E3216A531500514AB2 /* leafGrowth.tiff in Resources */,
 				423F84D9215E7937004CF08E /* FuzzySearch.storyboard in Resources */,
+				42DC56EA216A531500514AB2 /* parallelVeins.tiff in Resources */,
+				42DC56E4216A531500514AB2 /* leafAppearance.tiff in Resources */,
+				42DC56E8216A531500514AB2 /* inflorescence.tiff in Resources */,
 				4296D9C8213D8DEC00EC05A8 /* Assets.xcassets in Resources */,
+				42DC56E6216A531500514AB2 /* arallelParallelVenation.tiff in Resources */,
 				423F84D6215E330E004CF08E /* NoDataView.xib in Resources */,
 				4296D9C6213D8DEA00EC05A8 /* Main.storyboard in Resources */,
+				42DC56EE216A532600514AB2 /* style.css in Resources */,
+				42DC569D2169B53000514AB2 /* PlantNames.txt in Resources */,
 				421D959621455DE00058CC1B /* Detail.storyboard in Resources */,
+				42DC56EC216A531500514AB2 /* nettedVenation.tiff in Resources */,
+				42DC56EB216A531500514AB2 /* palmateVein.tiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,10 +567,12 @@
 				42C783D32141933100F76B24 /* PlantBookTableViewController.swift in Sources */,
 				42C783D82141943200F76B24 /* PlantDetailTableViewController.swift in Sources */,
 				423F84DD215E7C5E004CF08E /* JYKPicker.m in Sources */,
+				42DC569B2169AE5D00514AB2 /* DispatchQueue.swift in Sources */,
 				42A040DA2143E27000DDEBB4 /* PlantData.swift in Sources */,
 				4220A4BA2155F64B0019F84B /* NetworkService.swift in Sources */,
 				4220A4BF2156359E0019F84B /* MBProgressHUD.m in Sources */,
 				42DEC62A215D189B005673FA /* GSKeyChainDataManager.m in Sources */,
+				42DC56D2216A43EE00514AB2 /* FuzzySearchHelpViewController.swift in Sources */,
 				4220A4B82155F54E0019F84B /* PlantTableViewCell.swift in Sources */,
 				424C9D2E214E242F00ECBDA7 /* PlantStore.swift in Sources */,
 				42C783C821418FDE00F76B24 /* PlantMapViewController.swift in Sources */,

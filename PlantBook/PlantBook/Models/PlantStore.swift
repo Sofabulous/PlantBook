@@ -18,9 +18,10 @@ class PlantStore {
     // 查询数据库，实现模糊搜索
     private var plantDatas:[PlantData] = []
     
-    typealias ResultClosure = ([PlantData]?,Error?) -> Void
-    typealias PlantDataClosure = (PlantData?) -> Void
-    
+    typealias PlantDatasResultClosure = ([PlantData]?,Error?) -> Void
+    typealias singlePlantDataResultClosure = (PlantData?) -> Void
+    typealias JSON = [String: Any]
+
     // 用户喜爱植物
     private var userFavorites:[String] = []
     
@@ -88,7 +89,7 @@ class PlantStore {
         }
     }
     
-    func getPlantDataWith(type:PlantType, handler: @escaping ResultClosure) {
+    func getPlantDataWith(type:PlantType, handler: @escaping PlantDatasResultClosure) {
         NetworkService.getPlantDataWith(type: type) { [weak self] (datas, error) in
             if let _ = error {
                 handler(nil,error)
@@ -104,7 +105,7 @@ class PlantStore {
         }
     }
     
-    func getPlantDataWith(name:String, handler: @escaping PlantDataClosure) {
+    func getPlantDataWith(name:String, handler: @escaping singlePlantDataResultClosure) {
         NetworkService.searchPlantDataWith(name: name) { data in
             if let plantData = data {
                 handler(plantData)
@@ -115,7 +116,7 @@ class PlantStore {
     }
     
     // 根据地点找到关联的植物
-    func getPlantDataWith(location:String, handler: @escaping ResultClosure) {
+    func getPlantDataWith(location:String, handler: @escaping PlantDatasResultClosure) {
         NetworkService.searchPlantDataWith(location: location) { [weak self] (datas, error) in
             if let _ = error {
                 handler(nil,error)
@@ -132,7 +133,7 @@ class PlantStore {
     }
     
     // 根据模糊查询的条件找到关联的植物
-    func getPlantDataWith(conditions:[String], type:PlantType , handler:@escaping ResultClosure) {
+    func getPlantDataWith(conditions:[String], type:PlantType , handler:@escaping PlantDatasResultClosure) {
         NetworkService.searchPlantDataWith(conditions: conditions, type: type) { [weak self] (datas, error) in
             if let _ = error {
                 handler(nil,error)
@@ -157,9 +158,26 @@ class PlantStore {
         guard index < plantDatas.count else { return nil}
         return plantDatas[index]
     }
+    
     // 优化显示速度，本地保存这个植物数组
     //MARK: - 植物名称数组，以及方便首字母排序的相关操作
-    static let CHSPlantNames = ["矮棕竹","侧柏","慈竹","凤尾竹","桂竹","海金沙","柳杉","罗汉松","毛蕨","南方红豆杉","铺地柏","肾蕨","水杉","四川苏铁","苏铁","塔柏","铁线蕨","蜈蚣草","小琴丝竹","孝顺竹","雪松","异叶南洋杉","银杏","紫竹"]
+    static let CHSPlantNames:[String] = {
+        var names:[String] = []
+        guard let path = Bundle.main.path(forResource: "PlantNames", ofType: "txt") else { return [] }
+        let dataFile = try? String(contentsOfFile: path, encoding: .utf8)
+        if let data = dataFile {
+            let dataArray = dataFile?.split(separator: "\n")
+            if let array = dataArray {
+                for subName in array {
+                    let name = String(subName.utf8)
+                    if let PlantName = name {
+                        names.append(PlantName)
+                    }
+                }
+            }
+        }
+        return names
+    }()
     
     static let latinPlantNames = CHSPlantNames.map { $0.transformTextToLatin() }
     
@@ -180,12 +198,42 @@ class PlantStore {
     }
     
     static let plantLocations:[PlantLocation] = {
-        let Location1 = PlantLocation(latitude: 29.835631, longitude: 106.439491)
-        return [Location1]
+        guard let path = Bundle.main.path(forResource: "PlantLocations", ofType: "json") else { return [] }
+        if let json = loadLocalFiles(path: path){
+            var locations: [PlantLocation] = []
+            if let locationsArray = json["locations"] as? Array<JSON> {
+                for location in locationsArray {
+                    let longitude = location["longitude"] as? Double
+                    let latitude = location["latitude"] as? Double
+                    if let lon = longitude,let lat = latitude {
+                        locations.append(PlantLocation(longitude: lon, latitude: lat))
+                    }
+                }
+            }
+            return locations
+        }
+        return []
     }()
-
+    
+    static private func loadLocalFiles(path: String) -> JSON? {
+        do {
+            let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+            let serialized = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+            if let json = serialized as? JSON {
+                return json
+            }
+        }
+        catch {
+            return nil
+        }
+        return nil
+    }
+    
+    
     struct PlantLocation {
-        let latitude:Double
+        /// 经度
         let longitude:Double
+        /// 纬度
+        let latitude:Double
     }
 }
