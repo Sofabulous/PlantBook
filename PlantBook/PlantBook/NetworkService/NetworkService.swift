@@ -132,7 +132,7 @@ class  NetworkService {
     
     static public func searchPlantDataWith(conditions: [String], type:PlantType, handler: @escaping BmobObjectArrayResultBlock) {
         let query = BmobQuery(className: "Plant")
-        
+        query?.limit = 250
         query?.whereKey(NetworkServiceKey.PlantData.type, equalTo: type.rawValue)
         query?.findObjectsInBackground { (array, error) in
             if let array = array {
