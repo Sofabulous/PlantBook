@@ -13,7 +13,13 @@ extension String {
         let str = NSMutableString(string: self) as CFMutableString
         if CFStringTransform(str, nil, kCFStringTransformToLatin, false) {
             if CFStringTransform(str, nil, kCFStringTransformStripDiacritics, false) {
-                return str as String
+                let string = str as String
+                return  string.filter({ (char) -> Bool in
+                    if char != " " {
+                        return true
+                    }
+                    return false
+                })
             }
         }
         return ""
