@@ -99,6 +99,7 @@ class PlantMapViewController: UIViewController,BMKMapViewDelegate,BMKLocationMan
         locationManager.activityType = CLActivityType.automotiveNavigation
         locationManager.locationTimeout = 10
         locationManager.allowsBackgroundLocationUpdates = false
+        locationManager.startUpdatingHeading()
         userLocation = BMKUserLocation()
         
     }
@@ -117,7 +118,7 @@ class PlantMapViewController: UIViewController,BMKMapViewDelegate,BMKLocationMan
                 if self.judgeLocation(myLocation) {
                     self.userLocation.location = myLocation.location
                 }else {
-                    let fixLocation = CLLocation(latitude: 29.835631, longitude: 106.439491)
+                    let fixLocation = CLLocation(latitude: 29.828382, longitude: 106.430651)
                     self.userLocation.location = fixLocation
                     DispatchQueue.once(token: "com.yukun.swu.showTips", block: {
                         self.contentView.show(text: "不在学校会自动定位回学校噢")
@@ -130,12 +131,22 @@ class PlantMapViewController: UIViewController,BMKMapViewDelegate,BMKLocationMan
     
     private func judgeLocation(_ location: BMKLocation) -> Bool{
         if let realLocation = location.location?.coordinate {
-            if realLocation.longitude < 106.441, realLocation.longitude > 106.410, realLocation.latitude < 29.840, realLocation.latitude > 29.800{
+            if realLocation.longitude < 106.45, realLocation.longitude > 106.40, realLocation.latitude < 29.85, realLocation.latitude > 29.79{
                 return true
             }
         }
         return false
     }
+    
+    
+    // MARK: - BMKlocationManagerDelegate
+    func bmkLocationManager(_ manager: BMKLocationManager, didUpdate heading: CLHeading?) {
+        if let tempHeading = heading {
+            userLocation.heading = tempHeading
+            self.mapView?.updateLocationData(userLocation)
+        }
+    }
+    
     
     
     @IBAction func clickLocationButton(_ sender: Any) {
