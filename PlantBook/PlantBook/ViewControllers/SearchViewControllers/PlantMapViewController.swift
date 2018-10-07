@@ -108,15 +108,33 @@ class PlantMapViewController: UIViewController,BMKMapViewDelegate,BMKLocationMan
         mapView?.userTrackingMode = BMKUserTrackingModeFollowWithHeading;//设置定位的状态
         mapView?.showsUserLocation = true//显示定位图层
         locationManager.requestLocation(withReGeocode: true, withNetworkState: true) { [weak self] (location, networkState, error) in
+            guard let `self` = self else {return}
             if let _ = error {
-                self?.contentView.show(text: "🤔获取定位出现了一些小意外")
+                self.contentView.show(text: "🤔获取定位出现了一些小意外")
                 return
             }
             if let myLocation = location {
-                self?.userLocation.location = myLocation.location
-                self?.mapView?.updateLocationData(self?.userLocation)
+                if self.judgeLocation(myLocation) {
+                    self.userLocation.location = myLocation.location
+                }else {
+                    let fixLocation = CLLocation(latitude: 29.835631, longitude: 106.439491)
+                    self.userLocation.location = fixLocation
+                    DispatchQueue.once(token: "com.yukun.swu.showTips", block: {
+                        self.contentView.show(text: "不在学校会自动定位回学校噢")
+                    })
+                }
+                self.mapView?.updateLocationData(self.userLocation)
             }
         }
+    }
+    
+    private func judgeLocation(_ location: BMKLocation) -> Bool{
+        if let realLocation = location.location?.coordinate {
+            if realLocation.longitude < 106.441, realLocation.longitude > 106.410, realLocation.latitude < 29.840, realLocation.latitude > 29.800{
+                return true
+            }
+        }
+        return false
     }
     
     
