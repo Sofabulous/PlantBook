@@ -72,7 +72,7 @@ class PlantBookTableViewController: UITableViewController,UISearchBarDelegate {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let sortedCharacter = characterDic.keys.sorted()
-        return sortedCharacter[section]
+        return sortedCharacter[section].uppercased()
     }
     
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {

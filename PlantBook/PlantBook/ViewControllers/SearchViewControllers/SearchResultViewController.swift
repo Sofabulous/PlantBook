@@ -69,7 +69,7 @@ class SearchResultViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let sortedCharacter = characterDic.keys.sorted()
-        return sortedCharacter[section]
+        return sortedCharacter[section].uppercased()
     }
     
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
