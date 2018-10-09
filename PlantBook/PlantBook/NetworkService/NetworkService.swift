@@ -111,7 +111,10 @@ class  NetworkService {
     
     static public func searchPlantDataWith(location: String, handler: @escaping BmobObjectArrayResultBlock) {
         let query = BmobQuery(className: "Plant")
-        query?.whereKey(NetworkServiceKey.PlantData.location, equalTo: location)
+        guard let locationInt = Int(location) else {
+            return
+        }
+        query?.whereKey(NetworkServiceKey.PlantData.location, equalTo: locationInt)
         query?.findObjectsInBackground { (array, error) in
             if let array = array {
                 var plantDatas:[PlantData] = []

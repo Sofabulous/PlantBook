@@ -166,7 +166,11 @@ class PlantMapViewController: UIViewController,BMKMapViewDelegate,BMKLocationMan
         let location = PlantStore.plantLocations[number - 1]
         animatedAnnotation?.coordinate = CLLocationCoordinate2DMake(location.latitude, location.longitude)
         animatedAnnotation?.title = "查询"
-        animatedAnnotation?.subtitle = "\(number)号点"
+        if number < 34 {
+            animatedAnnotation?.subtitle = "\(number)号点"
+        }else {
+            animatedAnnotation?.subtitle = "\(number + 1)号点"
+        }
         mapView?.addAnnotation(animatedAnnotation)
     }
     
@@ -179,8 +183,14 @@ class PlantMapViewController: UIViewController,BMKMapViewDelegate,BMKLocationMan
             let image = UIImage(named: "point.png")
             let images = [image!]
             annotationView.setImages(images)
-            guard let characterTag = point.subtitle.first else {return nil}
-            let stringTag = String.init(characterTag)
+            let stringTag = point.subtitle.filter{
+                let str = String($0)
+                if let _ = Int(str) {
+                    return true
+                }
+                return false
+            }
+            guard stringTag.count > 0 else {return nil}
             if let tag = Int.init(stringTag) {
                 annotationView.tag = tag
             }
