@@ -17,7 +17,7 @@ class SearchResultViewController: UIViewController, UITableViewDelegate, UITable
             var characterDic:[String:Int] = [:]
             for plant in resultArray {
                 if let letter = plant.latinPlantName.first {
-                    let firstLetter = String(letter)
+                    let firstLetter = String(letter).uppercased()
                     if let num = characterDic[firstLetter] {
                         characterDic[firstLetter] = num + 1
                     }else {

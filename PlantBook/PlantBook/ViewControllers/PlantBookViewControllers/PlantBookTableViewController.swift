@@ -17,7 +17,7 @@ class PlantBookTableViewController: UITableViewController,UISearchBarDelegate {
             var characterDic:[String:Int] = [:]
             for plant in resultArray {
                 if let letter = plant.latinPlantName.first {
-                    let firstLetter = String(letter)
+                    let firstLetter = String(letter).uppercased()
                     if let num = characterDic[firstLetter] {
                         characterDic[firstLetter] = num + 1
                     }else {
@@ -72,7 +72,7 @@ class PlantBookTableViewController: UITableViewController,UISearchBarDelegate {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let sortedCharacter = characterDic.keys.sorted()
-        return sortedCharacter[section].uppercased()
+        return sortedCharacter[section]
     }
     
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
